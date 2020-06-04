@@ -3,26 +3,39 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://example.com/</loc>
-    <lastmod>2020-06-04T00:09:05+02:00</lastmod>
+    <loc>https://www.qu.antum.ml/docs/table-of-contents/0.-preface/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/posts/my-first-post/</loc>
-    <lastmod>2020-06-04T00:09:05+02:00</lastmod>
+    <loc>https://www.qu.antum.ml/docs/table-of-contents/1.-introduction/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/posts/</loc>
-    <lastmod>2020-06-04T00:09:05+02:00</lastmod>
+    <loc>https://www.qu.antum.ml/docs/table-of-contents/embedding/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/categories/</loc>
+    <loc>https://www.qu.antum.ml/docs/table-of-contents/pqc/</loc>
   </url>
   
   <url>
-    <loc>https://example.com/tags/</loc>
+    <loc>https://www.qu.antum.ml/docs/table-of-contents/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.qu.antum.ml/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.qu.antum.ml/docs/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.qu.antum.ml/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.qu.antum.ml/tags/</loc>
   </url>
   
 </urlset>
