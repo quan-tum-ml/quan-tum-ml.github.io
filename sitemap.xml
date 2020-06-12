@@ -11,11 +11,31 @@
   </url>
   
   <url>
-    <loc>https://www.qu.antum.ml/docs/Table-of-contents/Embedding/</loc>
+    <loc>https://www.qu.antum.ml/docs/Table-of-contents/2.-The-Data/</loc>
   </url>
   
   <url>
-    <loc>https://www.qu.antum.ml/docs/Table-of-contents/PQC/</loc>
+    <loc>https://www.qu.antum.ml/docs/Table-of-contents/3.-Embedding/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.qu.antum.ml/docs/Table-of-contents/4.-Parametrized-Quantum-Circuit/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.qu.antum.ml/docs/Table-of-contents/5.-Measurement/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.qu.antum.ml/docs/Table-of-contents/6.-Mapping/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.qu.antum.ml/docs/Table-of-contents/7.-Loss/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.qu.antum.ml/docs/Table-of-contents/8.-Optimization/</loc>
   </url>
   
   <url>
