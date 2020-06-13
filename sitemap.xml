@@ -15,27 +15,31 @@
   </url>
   
   <url>
-    <loc>https://www.qu.antum.ml/docs/Table-of-contents/3.-Embedding/</loc>
+    <loc>https://www.qu.antum.ml/docs/Table-of-contents/3.-Architecture/</loc>
   </url>
   
   <url>
-    <loc>https://www.qu.antum.ml/docs/Table-of-contents/4.-Parametrized-Quantum-Circuit/</loc>
+    <loc>https://www.qu.antum.ml/docs/Table-of-contents/4.-Embedding/</loc>
   </url>
   
   <url>
-    <loc>https://www.qu.antum.ml/docs/Table-of-contents/5.-Measurement/</loc>
+    <loc>https://www.qu.antum.ml/docs/Table-of-contents/5.-Parametrized-Quantum-Circuit/</loc>
   </url>
   
   <url>
-    <loc>https://www.qu.antum.ml/docs/Table-of-contents/6.-Mapping/</loc>
+    <loc>https://www.qu.antum.ml/docs/Table-of-contents/6.-Measurement/</loc>
   </url>
   
   <url>
-    <loc>https://www.qu.antum.ml/docs/Table-of-contents/7.-Loss/</loc>
+    <loc>https://www.qu.antum.ml/docs/Table-of-contents/7.-Mapping/</loc>
   </url>
   
   <url>
-    <loc>https://www.qu.antum.ml/docs/Table-of-contents/8.-Optimization/</loc>
+    <loc>https://www.qu.antum.ml/docs/Table-of-contents/8.-Loss/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.qu.antum.ml/docs/Table-of-contents/9.-Optimization/</loc>
   </url>
   
   <url>

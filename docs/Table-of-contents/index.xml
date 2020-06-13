@@ -46,62 +46,70 @@ Virtual env #  </description>
     
     <item>
       <title></title>
-      <link>https://www.qu.antum.ml/docs/Table-of-contents/3.-Embedding/</link>
+      <link>https://www.qu.antum.ml/docs/Table-of-contents/3.-Architecture/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.qu.antum.ml/docs/Table-of-contents/3.-Embedding/</guid>
-      <description>How does one get the data into the Quantum circuit? #  There are a multitude of ways to do so. The two simplest ways to embed information are Amplitude and Product encoding.
-Amplitude encoding #  Amplitude encoding only works if the input features x are nomalized to   \(\bm{x} \in [0,1] \)  . Then the Quantum states are prepared as following:
-Amplitude encoding
- \( x \in\{0,1\}^{n} \rightarrow |x \rangle \)   This of cause also works when working with binary input features, then it is called Basis encoding Amplitude embedding gives rise to a linear kernel in feature Hilbert space 3 and while it is consideres memory efficient, unfortunately ,the depth of this encoder circuit is expected to scale ex-ponentially with the number of qubits for generic inputs.</description>
+      <guid>https://www.qu.antum.ml/docs/Table-of-contents/3.-Architecture/</guid>
+      <description>Ubi loqui #  Markdown
+  \(Q \)   </description>
     </item>
     
     <item>
       <title></title>
-      <link>https://www.qu.antum.ml/docs/Table-of-contents/4.-Parametrized-Quantum-Circuit/</link>
+      <link>https://www.qu.antum.ml/docs/Table-of-contents/4.-Embedding/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.qu.antum.ml/docs/Table-of-contents/4.-Parametrized-Quantum-Circuit/</guid>
+      <guid>https://www.qu.antum.ml/docs/Table-of-contents/4.-Embedding/</guid>
+      <description>How does one get the data into the Quantum circuit? #  There are a multitude of ways to do so. The two simplest ways to embed information are Amplitude and Product encoding. This embedding circuit preceeds all other quantum circuits shown later and will not be drawn explicitly.
+Amplitude encoding #  Amplitude encoding only works if the input features x are nomalized to   \(\bm{x} \in [0,1] \)  .</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.qu.antum.ml/docs/Table-of-contents/5.-Parametrized-Quantum-Circuit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.qu.antum.ml/docs/Table-of-contents/5.-Parametrized-Quantum-Circuit/</guid>
+      <description>TODO #  The basic idea of quantum computing is similar to that of kernel methods in machine learning, to efficiently perform computations in an intractably large Hilbert/Kernel space.
+Parameterized Quantum Circuits (PQCs, also sometimes referred to as &amp;ldquo;ansatz&amp;rdquo; or &amp;quot; variational quantum circuit&amp;rdquo;) are a combination of multiple quantum gates operating on one or multiple qubits. The quantum gates have free parameters which can be optimzied to fit a desired probability distribution.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.qu.antum.ml/docs/Table-of-contents/6.-Measurement/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.qu.antum.ml/docs/Table-of-contents/6.-Measurement/</guid>
       <description>Ubi loqui #  Markdown
   \(Q\)   </description>
     </item>
     
     <item>
       <title></title>
-      <link>https://www.qu.antum.ml/docs/Table-of-contents/5.-Measurement/</link>
+      <link>https://www.qu.antum.ml/docs/Table-of-contents/7.-Mapping/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.qu.antum.ml/docs/Table-of-contents/5.-Measurement/</guid>
+      <guid>https://www.qu.antum.ml/docs/Table-of-contents/7.-Mapping/</guid>
       <description>Ubi loqui #  Markdown
   \(Q\)   </description>
     </item>
     
     <item>
       <title></title>
-      <link>https://www.qu.antum.ml/docs/Table-of-contents/6.-Mapping/</link>
+      <link>https://www.qu.antum.ml/docs/Table-of-contents/8.-Loss/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.qu.antum.ml/docs/Table-of-contents/6.-Mapping/</guid>
-      <description>Ubi loqui #  Markdown
-  \(Q\)   </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://www.qu.antum.ml/docs/Table-of-contents/7.-Loss/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.qu.antum.ml/docs/Table-of-contents/7.-Loss/</guid>
+      <guid>https://www.qu.antum.ml/docs/Table-of-contents/8.-Loss/</guid>
       <description>Ubi loqui #  Markdown
   \(Qz\)   </description>
     </item>
     
     <item>
       <title></title>
-      <link>https://www.qu.antum.ml/docs/Table-of-contents/8.-Optimization/</link>
+      <link>https://www.qu.antum.ml/docs/Table-of-contents/9.-Optimization/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://www.qu.antum.ml/docs/Table-of-contents/8.-Optimization/</guid>
+      <guid>https://www.qu.antum.ml/docs/Table-of-contents/9.-Optimization/</guid>
       <description>Ubi loqui #  Markdown
   \(Q \)   </description>
     </item>

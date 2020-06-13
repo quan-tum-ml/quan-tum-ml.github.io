@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="How does one get the data into the Quantum circuit? #  There are a multitude of ways to do so. The two simplest ways to embed information are Amplitude and Product encoding. This embedding circuit preceeds all other quantum circuits shown later and will not be drawn explicitly.
+Amplitude encoding #  Amplitude encoding only works if the input features x are nomalized to   \(\bm{x} \in [0,1] \)  .">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
+<meta property="og:description" content="How does one get the data into the Quantum circuit? #  There are a multitude of ways to do so. The two simplest ways to embed information are Amplitude and Product encoding. This embedding circuit preceeds all other quantum circuits shown later and will not be drawn explicitly.
+Amplitude encoding #  Amplitude encoding only works if the input features x are nomalized to   \(\bm{x} \in [0,1] \)  ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.qu.antum.ml/docs/Table-of-contents/4.-Embedding/" />
+
+<title>4. Embedding | ⚛️Hybrid Quantum Classical Machine Learning🔮</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.1205ebacf147e31d6bd6f74be1ef8d96f4bb2c4943c68e5a39b4e988a774a2b0.css" integrity="sha256-EgXrrPFH4x1r1vdL4e&#43;NlvS7LElDxo5aObTpiKd0orA=">
+<script defer src="/en.search.min.732b767e9d151abd00bf5a3ba8c34eb58bac9cec8d0f4756131c732c3d57c6c7.js" integrity="sha256-cyt2fp0VGr0Av1o7qMNOtYusnOyND0dWExxzLD1Xxsc="></script>
+
+<script defer src="/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js" integrity="sha256-dKi7B/C&#43;6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>⚛️Hybrid Quantum Classical Machine Learning🔮</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+    <span>Table of Contents</span>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/Table-of-contents/0.-Preface/" class="">0. Preface</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/Table-of-contents/1.-Introduction/" class="">1. Introduction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/Table-of-contents/2.-The-Data/" class="">2. the Data</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/Table-of-contents/3.-Architecture/" class="">3. Architecture</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/Table-of-contents/4.-Embedding/" class="active">4. Embedding</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/Table-of-contents/5.-Parametrized-Quantum-Circuit/" class="">5. Parametrized Quantum Circuit</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/Table-of-contents/6.-Measurement/" class="">6. Measurement</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/Table-of-contents/7.-Mapping/" class="">7. Mapping</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/Table-of-contents/8.-Loss/" class="">8. Loss</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/Table-of-contents/9.-Optimization/" class="">9. Optimization</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="https://github.com/quan-tum-ml" target="_blank" rel="noopener">
+        Github
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>4. Embedding</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#how-does-one-get-the-data-into-the-quantum-circuit">How does one get the data into the Quantum circuit?</a>
+      <ul>
+        <li><a href="#amplitude-encoding">Amplitude encoding</a></li>
+        <li><a href="#product-encoding">Product encoding</a></li>
+      </ul>
+    </li>
+    <li><a href="#embedding-circuit">Embedding circuit</a>
+      <ul>
+        <li><a href="#why-the-features-are-embedded-twice">Why the features are embedded twice</a></li>
+        <li><a href="#code">Code</a></li>
+      </ul>
+    </li>
+    <li><a href="#sources">Sources</a></li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="how-does-one-get-the-data-into-the-quantum-circuit">
+  How does one get the data into the Quantum circuit?
+  <a class="anchor" href="#how-does-one-get-the-data-into-the-quantum-circuit">#</a>
+</h1>
+<p>There are a multitude of ways to do so. The two simplest ways to embed information are Amplitude and Product encoding.
+This embedding circuit preceeds all other quantum circuits shown later and will not be drawn explicitly.</p>
+<h2 id="amplitude-encoding">
+  Amplitude encoding
+  <a class="anchor" href="#amplitude-encoding">#</a>
+</h2>
+<p>Amplitude encoding only works if the input features <strong>x</strong> are nomalized to 
+<link rel="stylesheet" href="/katex/katex.min.css" />
+<script defer src="/katex/katex.min.js"></script>
+<script defer src="/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script><span>
+  \(\bm{x} \in [0,1] \)
+</span>
+. Then the Quantum states are prepared as following:</p>
+<blockquote class="book-hint info">
+  <p>Amplitude encoding</p>
+<span>
+  \( x \in\{0,1\}^{n} \rightarrow |x \rangle \)
+</span>
+
+</blockquote>
+
+<p>This of cause also works when working with binary input features, then it is called <strong>Basis encoding</strong>
+Amplitude embedding gives rise to a linear kernel in feature Hilbert space<sup>
+  <a href="/#fn3">3</a></sup> and while it is consideres memory efficient, unfortunately ,the depth of this encoder circuit is expected to scale ex-ponentially with the number of qubits for generic inputs.Therefore, algorithms based on amplitude encoding couldbe impeded by our inability to coherently load data intoquantum states.<sup>
+  <a href="/#fn2">2</a></sup></p>
+<h2 id="product-encoding">
+  Product encoding
+  <a class="anchor" href="#product-encoding">#</a>
+</h2>
+<p>Here, the initial states of the qubits are fixed, e.g. to <span>
+  \(|0\rangle\)
+</span>
+ TODO</p>
+<blockquote class="book-hint info">
+  <p>Product encoding</p>
+<span>
+  \( x \in \mathbb{R}^{N} \rightarrow\left|\psi_{x}\right\rangle=\cos \left(x_{j}\right)|0\rangle&#43;\sin \left(x_{j}\right)|1\rangle \)
+</span>
+
+</blockquote>
+
+<h1 id="embedding-circuit">
+  Embedding circuit
+  <a class="anchor" href="#embedding-circuit">#</a>
+</h1>
+<p>Since the 
+  <a href="https://www.qu.antum.ml/docs/Table-of-contents/2.-The-Data/">data</a> is normalized and centered (<span>
+  \(\bm{x} \in [-0.5, 0.5] \)
+</span>
+) first a feature map <span>
+  \(\phi(\bm{x}) = 2*\pi*\bm{x} \)
+</span>
+ is applied.</p>
+<center>
+<img src="/mbed.png" width="400" height="200"/>
+</center>
+<blockquote>
+<p>&ldquo;Each  component  of  the feature-vector <strong>x</strong> is embedded as a single qubit rotation <span>
+  \( R_{x}(\phi(x_{i}))\)
+</span>
+ with <span>
+  \(\phi : x \rightarrow [0,2\pi)\)
+</span>
+. As we work with two-dimensional  data,  we  duplicate x0 and x1 on x2 and x3. After embedding the data in the parameters of the <span>
+  \(R_{x}\)
+</span>
+ gates,  we  apply  a  set  of  constant <span>
+  \(R_{y}\)
+</span>
+ and <span>
+  \(R_{z}\)
+</span>
+ rotations. That ensures that if projected down onto the computational basis states, the output states span approximately the same range.&ldquo;<sup>
+  <a href="/#fn1">1</a></sup></p>
+</blockquote>
+<h2 id="why-the-features-are-embedded-twice">
+  Why the features are embedded twice
+  <a class="anchor" href="#why-the-features-are-embedded-twice">#</a>
+</h2>
+<blockquote>
+<p>&ldquo;The no-cloning principle of quantum mechanics  suggests  that  there  is  an  advantage  in  redundantly  encoding  the  input  value  severaltimes.&ldquo;<sup>
+  <a href="/#fn4">4</a></sup></p>
+</blockquote>
+<p>The Authors call this &ldquo;input redundancy&rdquo;, in our example the redundancy is <strong>n=2</strong>. Furthermore the authors conclude that</p>
+<blockquote>
+<p>&ldquo;Input redundancy must be present if goodapproximations of functions are the goal&rdquo;</p>
+</blockquote>
+<h2 id="code">
+  Code
+  <a class="anchor" href="#code">#</a>
+</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@qml.template</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">statepreparation</span>(x):
+        qml<span style="color:#f92672">.</span>RX(x[<span style="color:#ae81ff">0</span>], wires<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+        qml<span style="color:#f92672">.</span>RX(x[<span style="color:#ae81ff">1</span>], wires<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+        qml<span style="color:#f92672">.</span>RX(x[<span style="color:#ae81ff">0</span>], wires<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>)
+        qml<span style="color:#f92672">.</span>RX(x[<span style="color:#ae81ff">1</span>], wires<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>)
+
+        qml<span style="color:#f92672">.</span>RY(np<span style="color:#f92672">.</span>pi <span style="color:#f92672">/</span> <span style="color:#ae81ff">4</span>, wires<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+        qml<span style="color:#f92672">.</span>RY(np<span style="color:#f92672">.</span>pi <span style="color:#f92672">/</span> <span style="color:#ae81ff">4</span>, wires<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+        qml<span style="color:#f92672">.</span>RY(np<span style="color:#f92672">.</span>pi <span style="color:#f92672">/</span> <span style="color:#ae81ff">4</span>, wires<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>)
+        qml<span style="color:#f92672">.</span>RY(np<span style="color:#f92672">.</span>pi <span style="color:#f92672">/</span> <span style="color:#ae81ff">4</span>, wires<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>)
+
+        qml<span style="color:#f92672">.</span>RZ(np<span style="color:#f92672">.</span>pi <span style="color:#f92672">/</span> <span style="color:#ae81ff">4</span>, wires<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+        qml<span style="color:#f92672">.</span>RZ(np<span style="color:#f92672">.</span>pi <span style="color:#f92672">/</span> <span style="color:#ae81ff">4</span>, wires<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+        qml<span style="color:#f92672">.</span>RZ(np<span style="color:#f92672">.</span>pi <span style="color:#f92672">/</span> <span style="color:#ae81ff">4</span>, wires<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>)
+        qml<span style="color:#f92672">.</span>RZ(np<span style="color:#f92672">.</span>pi <span style="color:#f92672">/</span> <span style="color:#ae81ff">4</span>, wires<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>)
+</code></pre></div><h1 id="sources">
+  Sources
+  <a class="anchor" href="#sources">#</a>
+</h1>
+<p><a name="fn1">1</a>: 
+  <a href="https://arxiv.org/abs/2003.09887">arXiv:2003.09887</a> <br/>
+<a name="fn2">2</a>: 
+  <a href="https://arxiv.org/abs/1906.07682">arXiv:1906.07682</a> <br/>
+<a name="fn3">3</a>: 
+  <a href="https://arxiv.org/abs/1803.07128">Quantum machine learning in feature Hilbert spaces</a> <br/>
+<a name="fn4">4</a>: 
+  <a href="https://arxiv.org/abs/1901.11434">Input Redundancy for Parameterized Quantum Circuits</a> <br/></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#how-does-one-get-the-data-into-the-quantum-circuit">How does one get the data into the Quantum circuit?</a>
+      <ul>
+        <li><a href="#amplitude-encoding">Amplitude encoding</a></li>
+        <li><a href="#product-encoding">Product encoding</a></li>
+      </ul>
+    </li>
+    <li><a href="#embedding-circuit">Embedding circuit</a>
+      <ul>
+        <li><a href="#why-the-features-are-embedded-twice">Why the features are embedded twice</a></li>
+        <li><a href="#code">Code</a></li>
+      </ul>
+    </li>
+    <li><a href="#sources">Sources</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
