@@ -4,11 +4,11 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Ubi loqui #  Markdown
-  \(Q \)   ">
+<meta name="description" content="Architecture #  I shall quickly describe the individual components which will be explained in greater detail on the following pages. Here the hybrid aspect becomes obvious: Blue background represents a quantum computer based system, while gray background represents a classical computer system.
+   The Data: synthetic, two-dimensional data, normalized and centered. Embedding: encodes the data into quantum states. Parametrized Quantum Circuit: Performs rotations and controlled rotations on qubits according to the parametervecor theta.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
-<meta property="og:description" content="Ubi loqui #  Markdown
-  \(Q \)   " />
+<meta property="og:description" content="Architecture #  I shall quickly describe the individual components which will be explained in greater detail on the following pages. Here the hybrid aspect becomes obvious: Blue background represents a quantum computer based system, while gray background represents a classical computer system.
+   The Data: synthetic, two-dimensional data, normalized and centered. Embedding: encodes the data into quantum states. Parametrized Quantum Circuit: Performs rotations and controlled rotations on qubits according to the parametervecor theta." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.qu.antum.ml/docs/Table-of-contents/3.-Architecture/" />
 
@@ -16,7 +16,7 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.1205ebacf147e31d6bd6f74be1ef8d96f4bb2c4943c68e5a39b4e988a774a2b0.css" integrity="sha256-EgXrrPFH4x1r1vdL4e&#43;NlvS7LElDxo5aObTpiKd0orA=">
-<script defer src="/en.search.min.264bde66fcf0cf59af4fc3524958516eaef59c8454fa4cf6146b2dec3d3cc374.js" integrity="sha256-JkveZvzwz1mvT8NSSVhRbq71nIRU&#43;kz2FGst7D08w3Q="></script>
+<script defer src="/en.search.min.2c613be8a5097ef882453e28d9979b00bb07cdee9e010520e043b4c6c3835ca8.js" integrity="sha256-LGE76KUJfviCRT4o2ZebALsHze6eAQUg4EO0xsODXKg="></script>
 
 <script defer src="/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js" integrity="sha256-dKi7B/C&#43;6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script>
 <!--
@@ -262,7 +262,7 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#ubi-loqui">Ubi loqui</a></li>
+    <li><a href="#architecture">Architecture</a></li>
   </ul>
 </nav>
 
@@ -274,20 +274,24 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="ubi-loqui">
-  Ubi loqui
-  <a class="anchor" href="#ubi-loqui">#</a>
+  <article class="markdown"><h1 id="architecture">
+  Architecture
+  <a class="anchor" href="#architecture">#</a>
 </h1>
-<blockquote class="book-hint danger">
-  <p>Markdown</p>
-<link rel="stylesheet" href="/katex/katex.min.css" />
-<script defer src="/katex/katex.min.js"></script>
-<script defer src="/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script><span>
-  \(Q \)
-</span>
-
-</blockquote>
-
+<p>I shall quickly describe the individual components which will be explained in greater detail on the following pages.
+Here the hybrid aspect becomes obvious: <span style="color:#59b2e5">Blue background represents a quantum computer based system, </span><span style="color:#666666">while gray background represents a classical computer system</span>.</p>
+<center>
+<img src="/arch.png" width="800" height="420"/>
+</center>
+<ul>
+<li>The Data: synthetic, two-dimensional data, normalized and centered.</li>
+<li><span style="color:#fc3535">Embedding:</span> encodes the data into quantum states.</li>
+<li><span style="color:#59d655">Parametrized Quantum Circuit:</span> Performs rotations and controlled rotations on qubits according to the parametervecor theta.</li>
+<li><span style="color:#2913a5">Measurement:</span> measures the quantum states in classical bits.</li>
+<li><span style="color:#000000">Mapping:</span> maps the probability distribution obtained my measuring to binary labels.</li>
+<li><span style="color:#fc8f1b">Lossfunction:</span> computes the difference between output and ground-truth according to some distance measure.</li>
+<li><span style="color:#f8fc1b">Optimizer:</span> minimizes the lossfunction by changing the parametervector theta.</li>
+</ul>
 </article>
  
       
@@ -318,7 +322,7 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#ubi-loqui">Ubi loqui</a></li>
+    <li><a href="#architecture">Architecture</a></li>
   </ul>
 </nav>
 

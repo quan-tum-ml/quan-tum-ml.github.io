@@ -30,7 +30,7 @@
 Qiskit
 Tensorflow Quantum
 Cirq
-Virtual env #  </description>
+Virtual env #  Getting started #  https://pennylane.ai/qml/demos/tutorial_variational_classifier.html</description>
     </item>
     
     <item>
@@ -50,8 +50,8 @@ Virtual env #  </description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.qu.antum.ml/docs/Table-of-contents/3.-Architecture/</guid>
-      <description>Ubi loqui #  Markdown
-  \(Q \)   </description>
+      <description>Architecture #  I shall quickly describe the individual components which will be explained in greater detail on the following pages. Here the hybrid aspect becomes obvious: Blue background represents a quantum computer based system, while gray background represents a classical computer system.
+   The Data: synthetic, two-dimensional data, normalized and centered. Embedding: encodes the data into quantum states. Parametrized Quantum Circuit: Performs rotations and controlled rotations on qubits according to the parametervecor theta.</description>
     </item>
     
     <item>
@@ -120,8 +120,7 @@ Parameterized Quantum Circuits (PQCs, also sometimes referred to as &amp;ldquo;a
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.qu.antum.ml/docs/Table-of-contents/_10.-Results/</guid>
-      <description>Ubi loqui #  Markdown
-  \(Q \)   </description>
+      <description>Quantum circuit results comparison #  My results    Theirs     Neural Network results comparison #  My results    Theirs     Quantum circuit vs Neural Network #  My Quantum circuit result    My Quantum classical NN result     Accuracy scores #   .tg {border-collapse:collapse;border-spacing:0;} .tg td{border-bottom-width:1px;border-color:black;border-style:solid;border-top-width:1px;border-width:0px; font-family:Arial, sans-serif;font-size:10px;overflow:hidden;padding:10px 5px;word-break:normal;} .tg th{border-bottom-width:1px;border-color:black;border-style:solid;border-top-width:1px;border-width:0px; font-family:Arial, sans-serif;font-size:10px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;} .</description>
     </item>
     
   </channel>
