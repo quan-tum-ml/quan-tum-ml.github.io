@@ -26,7 +26,11 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.qu.antum.ml/docs/Table-of-contents/1.-Introduction/</guid>
-      <description>Environment setup #  </description>
+      <description>Environment setup #  There is actually a suprisingly large amount of different libraries for quantum state simulation. I will use pennylane by XANADU.
+Qiskit
+Tensorflow Quantum
+Cirq
+Virtual env #  </description>
     </item>
     
     <item>
@@ -35,8 +39,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.qu.antum.ml/docs/Table-of-contents/2.-The-Data/</guid>
-      <description>Ubi loqui #  Markdown
-  \(Q\)   </description>
+      <description>About the Data #  This synthetic set consists of three subsets, each with three increasing difficulty levels, amounting to 9 datasets in total. Each of the nine sets consists of 1500 points (the amount is specified during the data generation). The data are split into 70% train and 30% validation.
+  Screenshot from  1
+*Note that the Datasets are nomalized to length one, but not centered around zero.</description>
     </item>
     
     <item>
@@ -45,8 +50,10 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.qu.antum.ml/docs/Table-of-contents/3.-Embedding/</guid>
-      <description>Ubi loqui #  Markdown
-  \(Qth\)   </description>
+      <description>How does one get the data into the Quantum circuit? #  There are a multitude of ways to do so. The two simplest ways to embed information are Amplitude and Product encoding.
+Amplitude encoding #  Amplitude encoding only works if the input features x are nomalized to   \(\bm{x} \in [0,1] \)  . Then the Quantum states are prepared as following:
+Amplitude encoding
+ \( x \in\{0,1\}^{n} \rightarrow |x \rangle \)   This of cause also works when working with binary input features, then it is called Basis encoding Amplitude embedding gives rise to a linear kernel in feature Hilbert space 3 and while it is consideres memory efficient, unfortunately ,the depth of this encoder circuit is expected to scale ex-ponentially with the number of qubits for generic inputs.</description>
     </item>
     
     <item>
