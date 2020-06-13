@@ -120,7 +120,8 @@ Parameterized Quantum Circuits (PQCs, also sometimes referred to as &amp;ldquo;a
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.qu.antum.ml/docs/Table-of-contents/ZZZ/</guid>
-      <description>Quantum circuit results comparison #  My results    Theirs     Neural Network results comparison #  My results    Theirs     Quantum circuit vs Neural Network #  My Quantum circuit result    My Quantum classical NN result     Accuracy scores #   .tg {border-collapse:collapse;border-spacing:0;} .tg td{border-bottom-width:1px;border-color:black;border-style:solid;border-top-width:1px;border-width:0px; font-family:Arial, sans-serif;font-size:10px;overflow:hidden;padding:10px 5px;word-break:normal;} .tg th{border-bottom-width:1px;border-color:black;border-style:solid;border-top-width:1px;border-width:0px; font-family:Arial, sans-serif;font-size:10px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;} .</description>
+      <description>Results #  Text
+Quantum circuit results comparison #  My results    Theirs     Neural Network results comparison #  My results    Theirs     Quantum circuit vs Neural Network #  My Quantum circuit result    My Quantum classical NN result     Accuracy scores #   .tg {border-collapse:collapse;border-spacing:0;} .tg td{border-bottom-width:1px;border-color:black;border-style:solid;border-top-width:1px;border-width:0px; font-family:Arial, sans-serif;font-size:10px;overflow:hidden;padding:10px 5px;word-break:normal;} .</description>
     </item>
     
   </channel>
