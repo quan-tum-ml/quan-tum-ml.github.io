@@ -4,11 +4,13 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Ubi loqui #  Markdown
-  \(Qz\)   ">
+<meta name="description" content="Ubi loqui #  The task of learning an arbitrary function from data is mathematically expressed as the minimization of a loss function   \(L(\bm{\theta})\)  , also known as the objective function, with respect to the parameter vector  \(\bm{\theta}\)  For the loss function, a standart quadratic loss was used:
+Square loss
+ \(L(\bm{\theta}) = (y - ŷ)^{2}\)   Where y is the ground truth label and ŷ is the predicted label">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
-<meta property="og:description" content="Ubi loqui #  Markdown
-  \(Qz\)   " />
+<meta property="og:description" content="Ubi loqui #  The task of learning an arbitrary function from data is mathematically expressed as the minimization of a loss function   \(L(\bm{\theta})\)  , also known as the objective function, with respect to the parameter vector  \(\bm{\theta}\)  For the loss function, a standart quadratic loss was used:
+Square loss
+ \(L(\bm{\theta}) = (y - ŷ)^{2}\)   Where y is the ground truth label and ŷ is the predicted label" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.qu.antum.ml/docs/Table-of-contents/8.-Loss/" />
 
@@ -16,7 +18,7 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.1205ebacf147e31d6bd6f74be1ef8d96f4bb2c4943c68e5a39b4e988a774a2b0.css" integrity="sha256-EgXrrPFH4x1r1vdL4e&#43;NlvS7LElDxo5aObTpiKd0orA=">
-<script defer src="/en.search.min.d02514a49c0d3defb104677ee9072868055e5523dcb69e3464172f4f1ef04f2c.js" integrity="sha256-0CUUpJwNPe&#43;xBGd&#43;6QcoaAVeVSPctp40ZBcvTx7wTyw="></script>
+<script defer src="/en.search.min.2b85a02a98e9b6ee927e24fa227f937aa17b0c25b83e5d968d71331ce61c0c5b.js" integrity="sha256-K4WgKpjptu6SfiT6In&#43;TeqF7DCW4Pl2WjXEzHOYcDFs="></script>
 
 <script defer src="/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js" integrity="sha256-dKi7B/C&#43;6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script>
 <!--
@@ -278,16 +280,27 @@ https://github.com/alex-shpak/hugo-book
   Ubi loqui
   <a class="anchor" href="#ubi-loqui">#</a>
 </h1>
-<blockquote class="book-hint danger">
-  <p>Markdown</p>
+<p>The task of learning an arbitrary function from data is mathematically expressed as the minimization of a loss function 
 <link rel="stylesheet" href="/katex/katex.min.css" />
 <script defer src="/katex/katex.min.js"></script>
 <script defer src="/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script><span>
-  \(Qz\)
+  \(L(\bm{\theta})\)
+</span>
+, also known as the objective function, with respect to the parameter vector <span>
+  \(\bm{\theta}\)
+</span>
+</p>
+<p>For the loss function, a standart quadratic loss was used:</p>
+<blockquote class="book-hint info">
+  <p>Square loss</p>
+<span>
+  \(L(\bm{\theta}) = (y - ŷ)^{2}\)
 </span>
 
 </blockquote>
 
+<p>Where y is the ground truth label and ŷ is the predicted label</p>
+<p>Note that this only works since we are using the confidence multiplied by its label and not the binary label itself. If we wished to do that, we would have to use a different loss function, e.g. binary cross entropy loss.</p>
 </article>
  
       

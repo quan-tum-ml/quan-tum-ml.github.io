@@ -61,6 +61,7 @@ Virtual env #  Getting started #  https://pennylane.ai/qml/demos/tutorial_variat
       
       <guid>https://www.qu.antum.ml/docs/Table-of-contents/4.-Embedding/</guid>
       <description>How does one get the data into the Quantum circuit? #  There are a multitude of ways to do so. The two simplest ways to embed information are Amplitude and Product encoding. This embedding circuit preceeds all other quantum circuits shown later and will not be drawn explicitly.
+TODO: talk about scaling&amp;hellip;linear vs. non-linear kernel
 Amplitude encoding #  Amplitude encoding only works if the input features x are nomalized to   \(\bm{x} \in [0,1] \)  .</description>
     </item>
     
@@ -80,8 +81,9 @@ Parameterized Quantum Circuits (PQCs, also sometimes referred to as &amp;ldquo;a
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.qu.antum.ml/docs/Table-of-contents/6.-Measurement/</guid>
-      <description>Ubi loqui #  Markdown
-  \(Q\)   </description>
+      <description>Measurement #  The four qubits are then measured in a fixed but arbitray basis. Arbitrary since you can always rotate into a different basis, in this case this rotation is just leaned and not explicitly applied.
+The process of preparing quantum states, embedding data, applying rotations according to the parametervecor theta and measureing the outcome are performed muliple times.
+dev = qml.device(&amp;#34;default.qubit&amp;#34;, wires=4, shots=1000) This is referred to as &amp;ldquo;shots&amp;rdquo; and will lead to a probability distribution over the possible states.</description>
     </item>
     
     <item>
@@ -90,8 +92,10 @@ Parameterized Quantum Circuits (PQCs, also sometimes referred to as &amp;ldquo;a
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.qu.antum.ml/docs/Table-of-contents/7.-Mapping/</guid>
-      <description>Ubi loqui #  Markdown
-  \(Q\)   </description>
+      <description>Mapping #  Now that we have the probablílity distribution we need to somehow map this to eighter one of our output labels. This is done via a boolean function;
+When measureing n qubits:   \( j \in \{0,1\}^{n} \)  , the mapping function is of the kind:
+boolean mapping function
+ \( j \rightarrow \{0,1\} \)   While this would be sufficient for a classification task, in order to display the &amp;ldquo;confidence&amp;rdquo; of the prediction, my approach was to multiply the normalized maximum probability (e.</description>
     </item>
     
     <item>
@@ -100,8 +104,9 @@ Parameterized Quantum Circuits (PQCs, also sometimes referred to as &amp;ldquo;a
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.qu.antum.ml/docs/Table-of-contents/8.-Loss/</guid>
-      <description>Ubi loqui #  Markdown
-  \(Qz\)   </description>
+      <description>Ubi loqui #  The task of learning an arbitrary function from data is mathematically expressed as the minimization of a loss function   \(L(\bm{\theta})\)  , also known as the objective function, with respect to the parameter vector  \(\bm{\theta}\)  For the loss function, a standart quadratic loss was used:
+Square loss
+ \(L(\bm{\theta}) = (y - ŷ)^{2}\)   Where y is the ground truth label and ŷ is the predicted label</description>
     </item>
     
     <item>
@@ -110,8 +115,10 @@ Parameterized Quantum Circuits (PQCs, also sometimes referred to as &amp;ldquo;a
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.qu.antum.ml/docs/Table-of-contents/9.-Optimization/</guid>
-      <description>Ubi loqui #  Markdown
-  \(Q \)   </description>
+      <description>Optimization #  SPSA
+  \( \frac{\partial L}{\partial \theta_{j}} \approx \frac{L\left(\boldsymbol{\theta}&amp;#43;\Delta \boldsymbol{e}_{j}\right)-L\left(\boldsymbol{\theta}-\Delta \boldsymbol{e}_{j}\right)}{2 \Delta} \)   Gradient descent
+ \( \frac{\partial L}{\partial \theta_{j}} \approx \frac{L(\boldsymbol{\theta}&amp;#43;c \boldsymbol{\Delta})-L(\boldsymbol{\theta}-c \boldsymbol{\Delta})}{2 c \Delta_{j}} \)   ADAM
+ \( \boldsymbol{\theta} \leftarrow \boldsymbol{\theta}-\eta \nabla_{\boldsymbol{\theta}} L \)   num_qubits = 4 num_layers = 2 qc= c19(num_layers) num_params = qc.get_numparams() best_val = (0.01 * np.random.randn(num_layers, num_params), 0.01)#[] best_acc = 0.0 from pennylane.optimize import AdamOptimizer learning_rate = [4,2,1,0.</description>
     </item>
     
     <item>
@@ -120,8 +127,8 @@ Parameterized Quantum Circuits (PQCs, also sometimes referred to as &amp;ldquo;a
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.qu.antum.ml/docs/Table-of-contents/ZZZ/</guid>
-      <description>Results #  Text
-Quantum circuit results comparison #  My results    Theirs     Neural Network results comparison #  My results    Theirs     Quantum circuit vs Neural Network #  My Quantum circuit result    My Quantum classical NN result     Accuracy scores #   .tg {border-collapse:collapse;border-spacing:0;} .tg td{border-bottom-width:1px;border-color:black;border-style:solid;border-top-width:1px;border-width:0px; font-family:Arial, sans-serif;font-size:10px;overflow:hidden;padding:10px 5px;word-break:normal;} .</description>
+      <description>Results #  Be aware, that the results might not line up exactly for different reasons. After all this is a stochastic optimization process, the generation of the Data, the selection of training and validation set or the selection of the minibatches mitght contribute to finding a different minima.
+Quantum circuit results comparison #  The following images show the decision boundaries for circuit 19 with two layers. I tweaked the batch size and the learning rate, thereby increasing the optimization duration but archieving much more consistent results.</description>
     </item>
     
   </channel>

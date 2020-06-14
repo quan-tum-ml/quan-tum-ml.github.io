@@ -4,11 +4,15 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Ubi loqui #  Markdown
-  \(Q \)   ">
+<meta name="description" content="Optimization #  SPSA
+  \( \frac{\partial L}{\partial \theta_{j}} \approx \frac{L\left(\boldsymbol{\theta}&#43;\Delta \boldsymbol{e}_{j}\right)-L\left(\boldsymbol{\theta}-\Delta \boldsymbol{e}_{j}\right)}{2 \Delta} \)   Gradient descent
+ \( \frac{\partial L}{\partial \theta_{j}} \approx \frac{L(\boldsymbol{\theta}&#43;c \boldsymbol{\Delta})-L(\boldsymbol{\theta}-c \boldsymbol{\Delta})}{2 c \Delta_{j}} \)   ADAM
+ \( \boldsymbol{\theta} \leftarrow \boldsymbol{\theta}-\eta \nabla_{\boldsymbol{\theta}} L \)   num_qubits = 4 num_layers = 2 qc= c19(num_layers) num_params = qc.get_numparams() best_val = (0.01 * np.random.randn(num_layers, num_params), 0.01)#[] best_acc = 0.0 from pennylane.optimize import AdamOptimizer learning_rate = [4,2,1,0.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
-<meta property="og:description" content="Ubi loqui #  Markdown
-  \(Q \)   " />
+<meta property="og:description" content="Optimization #  SPSA
+  \( \frac{\partial L}{\partial \theta_{j}} \approx \frac{L\left(\boldsymbol{\theta}&#43;\Delta \boldsymbol{e}_{j}\right)-L\left(\boldsymbol{\theta}-\Delta \boldsymbol{e}_{j}\right)}{2 \Delta} \)   Gradient descent
+ \( \frac{\partial L}{\partial \theta_{j}} \approx \frac{L(\boldsymbol{\theta}&#43;c \boldsymbol{\Delta})-L(\boldsymbol{\theta}-c \boldsymbol{\Delta})}{2 c \Delta_{j}} \)   ADAM
+ \( \boldsymbol{\theta} \leftarrow \boldsymbol{\theta}-\eta \nabla_{\boldsymbol{\theta}} L \)   num_qubits = 4 num_layers = 2 qc= c19(num_layers) num_params = qc.get_numparams() best_val = (0.01 * np.random.randn(num_layers, num_params), 0.01)#[] best_acc = 0.0 from pennylane.optimize import AdamOptimizer learning_rate = [4,2,1,0." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.qu.antum.ml/docs/Table-of-contents/9.-Optimization/" />
 
@@ -16,7 +20,7 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.1205ebacf147e31d6bd6f74be1ef8d96f4bb2c4943c68e5a39b4e988a774a2b0.css" integrity="sha256-EgXrrPFH4x1r1vdL4e&#43;NlvS7LElDxo5aObTpiKd0orA=">
-<script defer src="/en.search.min.d02514a49c0d3defb104677ee9072868055e5523dcb69e3464172f4f1ef04f2c.js" integrity="sha256-0CUUpJwNPe&#43;xBGd&#43;6QcoaAVeVSPctp40ZBcvTx7wTyw="></script>
+<script defer src="/en.search.min.2b85a02a98e9b6ee927e24fa227f937aa17b0c25b83e5d968d71331ce61c0c5b.js" integrity="sha256-K4WgKpjptu6SfiT6In&#43;TeqF7DCW4Pl2WjXEzHOYcDFs="></script>
 
 <script defer src="/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js" integrity="sha256-dKi7B/C&#43;6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script>
 <!--
@@ -262,7 +266,7 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#ubi-loqui">Ubi loqui</a></li>
+    <li><a href="#optimization">Optimization</a></li>
   </ul>
 </nav>
 
@@ -274,20 +278,110 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="ubi-loqui">
-  Ubi loqui
-  <a class="anchor" href="#ubi-loqui">#</a>
+  <article class="markdown"><h1 id="optimization">
+  Optimization
+  <a class="anchor" href="#optimization">#</a>
 </h1>
-<blockquote class="book-hint danger">
-  <p>Markdown</p>
+<blockquote class="book-hint info">
+  <p>SPSA</p>
 <link rel="stylesheet" href="/katex/katex.min.css" />
 <script defer src="/katex/katex.min.js"></script>
 <script defer src="/katex/auto-render.min.js" onload="renderMathInElement(document.body);"></script><span>
-  \(Q \)
+  \( \frac{\partial L}{\partial \theta_{j}} \approx \frac{L\left(\boldsymbol{\theta}&#43;\Delta \boldsymbol{e}_{j}\right)-L\left(\boldsymbol{\theta}-\Delta \boldsymbol{e}_{j}\right)}{2 \Delta} \)
 </span>
 
 </blockquote>
 
+<blockquote class="book-hint info">
+  <p>Gradient descent</p>
+<span>
+  \( \frac{\partial L}{\partial \theta_{j}} \approx \frac{L(\boldsymbol{\theta}&#43;c \boldsymbol{\Delta})-L(\boldsymbol{\theta}-c \boldsymbol{\Delta})}{2 c \Delta_{j}} \)
+</span>
+
+</blockquote>
+
+<blockquote class="book-hint info">
+  <p>ADAM</p>
+<span>
+  \( \boldsymbol{\theta} \leftarrow \boldsymbol{\theta}-\eta \nabla_{\boldsymbol{\theta}} L \)
+</span>
+
+</blockquote>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+num_qubits <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>
+num_layers <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+
+qc<span style="color:#f92672">=</span> c19(num_layers)
+num_params <span style="color:#f92672">=</span> qc<span style="color:#f92672">.</span>get_numparams()
+
+best_val <span style="color:#f92672">=</span> (<span style="color:#ae81ff">0.01</span> <span style="color:#f92672">*</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>randn(num_layers, num_params), <span style="color:#ae81ff">0.01</span>)<span style="color:#75715e">#[]</span>
+best_acc <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.0</span>
+
+<span style="color:#f92672">from</span> pennylane.optimize <span style="color:#f92672">import</span> AdamOptimizer
+
+learning_rate <span style="color:#f92672">=</span> [<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0.5</span>,<span style="color:#ae81ff">0.25</span>,<span style="color:#ae81ff">0.1</span>]
+opt <span style="color:#f92672">=</span> AdamOptimizer(learning_rate, beta1<span style="color:#f92672">=</span><span style="color:#ae81ff">0.9</span>, beta2<span style="color:#f92672">=</span><span style="color:#ae81ff">0.999</span>)
+
+losslist <span style="color:#f92672">=</span> []
+
+batch_size <span style="color:#f92672">=</span> <span style="color:#ae81ff">256</span>
+
+<span style="color:#75715e"># train the variational classifier</span>
+var <span style="color:#f92672">=</span> best_val<span style="color:#75715e">#var_init</span>
+
+<span style="color:#66d9ef">for</span> lr <span style="color:#f92672">in</span> learning_rate:
+    opt <span style="color:#f92672">=</span> AdamOptimizer(lr, beta1<span style="color:#f92672">=</span><span style="color:#ae81ff">0.9</span>, beta2<span style="color:#f92672">=</span><span style="color:#ae81ff">0.999</span>)
+
+    <span style="color:#66d9ef">for</span> it <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">60</span>):
+
+        <span style="color:#75715e"># Update the weights by one optimizer step</span>
+        batch_index <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>randint(<span style="color:#ae81ff">0</span>, num_train, (batch_size,))
+        <span style="color:#75715e">#feats_train_batch = feats_train[batch_index]</span>
+        feats_train_batch <span style="color:#f92672">=</span> feats_train[batch_index]
+        Y_train_batch <span style="color:#f92672">=</span> Y_train[batch_index]
+        var <span style="color:#f92672">=</span> opt<span style="color:#f92672">.</span>step(<span style="color:#66d9ef">lambda</span> v: qc<span style="color:#f92672">.</span>cost(v, feats_train_batch, Y_train_batch), var)
+
+        <span style="color:#75715e"># Compute predictions on train and validation set</span>
+        predictions_train <span style="color:#f92672">=</span> [np<span style="color:#f92672">.</span>sign(qc<span style="color:#f92672">.</span>variational_classifier(var, angles<span style="color:#f92672">=</span>f)) <span style="color:#66d9ef">for</span> f <span style="color:#f92672">in</span> feats_train]
+        predictions_val <span style="color:#f92672">=</span> [np<span style="color:#f92672">.</span>sign(qc<span style="color:#f92672">.</span>variational_classifier(var, angles<span style="color:#f92672">=</span>f)) <span style="color:#66d9ef">for</span> f <span style="color:#f92672">in</span> feats_val]
+
+        <span style="color:#75715e"># Compute accuracy on train and validation set</span>
+        acc_train <span style="color:#f92672">=</span> accuracy(Y_train, predictions_train)
+        acc_val <span style="color:#f92672">=</span> accuracy(Y_val, predictions_val)
+
+        <span style="color:#66d9ef">if</span> acc_train <span style="color:#f92672">&gt;</span> best_acc:
+            <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;NEW BEST&#34;</span>)
+            best_val <span style="color:#f92672">=</span> var
+            best_acc <span style="color:#f92672">=</span> acc_train
+            
+            predictions_grid <span style="color:#f92672">=</span> [qc<span style="color:#f92672">.</span>variational_classifier(var, angles<span style="color:#f92672">=</span>f) <span style="color:#66d9ef">for</span> f <span style="color:#f92672">in</span> features_grid]
+            Z <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>reshape(predictions_grid, xx<span style="color:#f92672">.</span>shape)
+
+            <span style="color:#75715e"># plot decision regions</span>
+            cnt <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>contourf(xx, yy, Z, levels<span style="color:#f92672">=</span>np<span style="color:#f92672">.</span>arange(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1.1</span>, <span style="color:#ae81ff">0.1</span>), cmap<span style="color:#f92672">=</span>cm, alpha<span style="color:#f92672">=</span><span style="color:#ae81ff">0.8</span>, extend<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;both&#34;</span>)
+            plt<span style="color:#f92672">.</span>contour(xx, yy, Z, levels<span style="color:#f92672">=</span>[<span style="color:#ae81ff">0.0</span>], colors<span style="color:#f92672">=</span>(<span style="color:#e6db74">&#34;black&#34;</span>,), linestyles<span style="color:#f92672">=</span>(<span style="color:#e6db74">&#34;--&#34;</span>,), linewidths<span style="color:#f92672">=</span>(<span style="color:#ae81ff">0.8</span>,))
+            plt<span style="color:#f92672">.</span>colorbar(cnt, ticks<span style="color:#f92672">=</span>[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>])
+            plt<span style="color:#f92672">.</span>show()
+            
+        loss <span style="color:#f92672">=</span> qc<span style="color:#f92672">.</span>cost(var, features, Y)
+        losslist<span style="color:#f92672">.</span>append(loss)
+
+        <span style="color:#66d9ef">print</span>(
+            <span style="color:#e6db74">&#34;Iter: {:5d} | Cost: {:0.7f} | Acc train: {:0.7f} | Acc validation: {:0.7f} | Best acc: {:0.7f}&#34;</span>
+            <span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">.</span>format(it <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, loss, acc_train, acc_val, best_acc)
+        )
+
+
+<span style="color:#66d9ef">print</span>(best_val)
+</code></pre></div><p>Learning rate schedule, batch size
+analytical vs. numerical gradient
+- running time
+No real gradient descent on quantum</p>
+<p>Weights are initialized to small random values</p>
+<p>Pennylane comes with a range of different optimizers
+pennylane also has a pytorch interface
+pennylane has different ways of calculating the gradient</p>
 </article>
  
       
@@ -318,7 +412,7 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#ubi-loqui">Ubi loqui</a></li>
+    <li><a href="#optimization">Optimization</a></li>
   </ul>
 </nav>
 

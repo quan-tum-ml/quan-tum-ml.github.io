@@ -4,11 +4,11 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Results #  Text
-Quantum circuit results comparison #  My results    Theirs     Neural Network results comparison #  My results    Theirs     Quantum circuit vs Neural Network #  My Quantum circuit result    My Quantum classical NN result     Accuracy scores #   .tg {border-collapse:collapse;border-spacing:0;} .tg td{border-bottom-width:1px;border-color:black;border-style:solid;border-top-width:1px;border-width:0px; font-family:Arial, sans-serif;font-size:10px;overflow:hidden;padding:10px 5px;word-break:normal;} .">
+<meta name="description" content="Results #  Be aware, that the results might not line up exactly for different reasons. After all this is a stochastic optimization process, the generation of the Data, the selection of training and validation set or the selection of the minibatches mitght contribute to finding a different minima.
+Quantum circuit results comparison #  The following images show the decision boundaries for circuit 19 with two layers. I tweaked the batch size and the learning rate, thereby increasing the optimization duration but archieving much more consistent results.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="10. Results" />
-<meta property="og:description" content="Results #  Text
-Quantum circuit results comparison #  My results    Theirs     Neural Network results comparison #  My results    Theirs     Quantum circuit vs Neural Network #  My Quantum circuit result    My Quantum classical NN result     Accuracy scores #   .tg {border-collapse:collapse;border-spacing:0;} .tg td{border-bottom-width:1px;border-color:black;border-style:solid;border-top-width:1px;border-width:0px; font-family:Arial, sans-serif;font-size:10px;overflow:hidden;padding:10px 5px;word-break:normal;} ." />
+<meta property="og:description" content="Results #  Be aware, that the results might not line up exactly for different reasons. After all this is a stochastic optimization process, the generation of the Data, the selection of training and validation set or the selection of the minibatches mitght contribute to finding a different minima.
+Quantum circuit results comparison #  The following images show the decision boundaries for circuit 19 with two layers. I tweaked the batch size and the learning rate, thereby increasing the optimization duration but archieving much more consistent results." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.qu.antum.ml/docs/Table-of-contents/ZZZ/" />
 
@@ -16,7 +16,7 @@ Quantum circuit results comparison #  My results    Theirs     Neural Network re
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.1205ebacf147e31d6bd6f74be1ef8d96f4bb2c4943c68e5a39b4e988a774a2b0.css" integrity="sha256-EgXrrPFH4x1r1vdL4e&#43;NlvS7LElDxo5aObTpiKd0orA=">
-<script defer src="/en.search.min.d02514a49c0d3defb104677ee9072868055e5523dcb69e3464172f4f1ef04f2c.js" integrity="sha256-0CUUpJwNPe&#43;xBGd&#43;6QcoaAVeVSPctp40ZBcvTx7wTyw="></script>
+<script defer src="/en.search.min.2b85a02a98e9b6ee927e24fa227f937aa17b0c25b83e5d968d71331ce61c0c5b.js" integrity="sha256-K4WgKpjptu6SfiT6In&#43;TeqF7DCW4Pl2WjXEzHOYcDFs="></script>
 
 <script defer src="/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js" integrity="sha256-dKi7B/C&#43;6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script>
 <!--
@@ -267,6 +267,7 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#neural-network-results-comparison">Neural Network results comparison</a></li>
     <li><a href="#quantum-circuit-vs-neural-network">Quantum circuit vs Neural Network</a></li>
     <li><a href="#accuracy-scores">Accuracy scores</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
     <li><a href="#outlook">Outlook</a></li>
   </ul>
 </nav>
@@ -283,18 +284,22 @@ https://github.com/alex-shpak/hugo-book
   Results
   <a class="anchor" href="#results">#</a>
 </h1>
-<p>Text</p>
+<p>Be aware, that the results might not line up exactly for different reasons. After all this is a stochastic optimization process, the generation of the Data, the selection of training and validation set or the selection of the minibatches mitght contribute to finding a different minima.</p>
 <h1 id="quantum-circuit-results-comparison">
   Quantum circuit results comparison
   <a class="anchor" href="#quantum-circuit-results-comparison">#</a>
 </h1>
+<p>The following images show the decision boundaries for circuit 19 with two layers.
+I tweaked the batch size and the learning rate, thereby increasing the optimization duration but archieving much more consistent results. Note how 3b is especially close to the paper&rsquo;s result:
 <div class="book-columns flex flex-wrap">
   
   <div class="flex-even markdown-inner">
     <h2 id="my-results">My results</h2>
 <center>
-<img src="/resultc192l.png" width="400" height="320"/>
+<img src="/final2.png" width="400" height="320"/>
 </center>
+<p>Batch size: 256</p>
+<p>learning rate shedule: [4,2,1,0.5,0.25,0.1]</p>
 
   </div>
   
@@ -303,15 +308,25 @@ https://github.com/alex-shpak/hugo-book
 <center>
 <img src="/resultc192l.png" width="400" height="320"/>
 </center>
+<p>Batch size: ???</p>
+<p>Learning rate schedule: [4,3,2,1.5,1,0.5]</p>
 
   </div>
   
 </div>
-
+</p>
+<p>Here are my results again, this time with confidence values:</p>
+<center>
+<img src="/final.png" width="800" height="600"/>
+</center>
+<p>Notice that the only obvious poor result is visible for 3c. The generalisation is really bad, to which the high class imbalance and thus comparatively low number of red training examples probably contributed. Interestingly the confidence in eighter class is also rather fow in this dataset. My theory is, that once a low classification error is archieved, the only way to minimize the loss function is to increase the confidence in the classification.</p>
 <h1 id="neural-network-results-comparison">
   Neural Network results comparison
   <a class="anchor" href="#neural-network-results-comparison">#</a>
 </h1>
+<p>The following images show the decision boundaries for the neural network with two layers.
+In the paper no information about the actual optimization procedure, besides the use of ADAM are given. So despite having to reverse engineer most of the parameters, I think the results are reasonably close.
+Here you can see the comparison of the two layer network described in TODO</p>
 <div class="book-columns flex flex-wrap">
   
   <div class="flex-even markdown-inner">
@@ -341,7 +356,7 @@ https://github.com/alex-shpak/hugo-book
   <div class="flex-even markdown-inner">
     <h2 id="my-quantum-circuit-result">My Quantum circuit result</h2>
 <center>
-<img src="/resultc192l.png" width="400" height="320"/>
+<img src="/final.png" width="400" height="320"/>
 </center>
 
   </div>
@@ -349,7 +364,7 @@ https://github.com/alex-shpak/hugo-book
   <div class="flex-even markdown-inner">
     <h2 id="my-quantum-classical-nn-result">My Quantum classical NN result</h2>
 <center>
-<img src="/resultc192l.png" width="400" height="320"/>
+<img src="/myNN.png" width="400" height="320"/>
 </center>
 
   </div>
@@ -509,10 +524,30 @@ https://github.com/alex-shpak/hugo-book
 </tbody>
 </table>
 </center>
+<h1 id="conclusion">
+  Conclusion
+  <a class="anchor" href="#conclusion">#</a>
+</h1>
+<ul>
+<li>Hybrid learning will be a powerfull techique on near term noisy quantum computers</li>
+<li>To date, all supervised learning experiments involved scaled-down,  often  trivial,  datasets  due  to  the  limitation of available quantum hardware, and demonstrations at  a  more  realistic  scale  are  desirable.</li>
+<li>One possible pitfall is that  as  the  circuits  become  more  expressive,  the  optimization landscape might also become harder to explore.</li>
+<li>Provided  that  we  can  efficiently  load  or prepare quantum data in a qubit register, PQC models will deliver a clear advantage over classical methods for quantum learning tasks.</li>
+</ul>
 <h1 id="outlook">
   Outlook
   <a class="anchor" href="#outlook">#</a>
 </h1>
+<p><strong>What now?</strong></p>
+<ul>
+<li>Have a look at the code and try it yourself!</li>
+<li>Try a different initialization scheme to avoid barren plateaus</li>
+<li>Try combinations of different circuits, layers, embedding or cost functions!</li>
+<li>Try different optimizers, such as gradient free optimizers (e.g. genetic algorithms) of try an analytical gradient!</li>
+<li>Try regularization!</li>
+<li>Try to find a real-world dataset!</li>
+<li>Go deeper!</li>
+</ul>
 </article>
  
       
@@ -548,6 +583,7 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#neural-network-results-comparison">Neural Network results comparison</a></li>
     <li><a href="#quantum-circuit-vs-neural-network">Quantum circuit vs Neural Network</a></li>
     <li><a href="#accuracy-scores">Accuracy scores</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
     <li><a href="#outlook">Outlook</a></li>
   </ul>
 </nav>
