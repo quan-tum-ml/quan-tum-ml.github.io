@@ -50,7 +50,7 @@ Virtual env #  Getting started #  https://pennylane.ai/qml/demos/tutorial_variat
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.qu.antum.ml/docs/Table-of-contents/3.-Architecture/</guid>
-      <description>Architecture #  I shall quickly describe the individual components which will be explained in greater detail on the following pages. Here the hybrid aspect becomes obvious: Blue background represents a quantum computer based system, while gray background represents a classical computer system.
+      <description>Architecture #  Quantum Circuit #  I shall quickly describe the individual components which will be explained in greater detail on the following pages. Here the hybrid aspect becomes obvious: Blue background represents a quantum computer based system, while gray background represents a classical computer system.
    The Data: synthetic, two-dimensional data, normalized and centered. Embedding: encodes the data into quantum states. Parametrized Quantum Circuit: Performs rotations and controlled rotations on qubits according to the parametervecor theta.</description>
     </item>
     

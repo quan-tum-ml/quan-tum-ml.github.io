@@ -4,10 +4,10 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Architecture #  I shall quickly describe the individual components which will be explained in greater detail on the following pages. Here the hybrid aspect becomes obvious: Blue background represents a quantum computer based system, while gray background represents a classical computer system.
+<meta name="description" content="Architecture #  Quantum Circuit #  I shall quickly describe the individual components which will be explained in greater detail on the following pages. Here the hybrid aspect becomes obvious: Blue background represents a quantum computer based system, while gray background represents a classical computer system.
    The Data: synthetic, two-dimensional data, normalized and centered. Embedding: encodes the data into quantum states. Parametrized Quantum Circuit: Performs rotations and controlled rotations on qubits according to the parametervecor theta.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
-<meta property="og:description" content="Architecture #  I shall quickly describe the individual components which will be explained in greater detail on the following pages. Here the hybrid aspect becomes obvious: Blue background represents a quantum computer based system, while gray background represents a classical computer system.
+<meta property="og:description" content="Architecture #  Quantum Circuit #  I shall quickly describe the individual components which will be explained in greater detail on the following pages. Here the hybrid aspect becomes obvious: Blue background represents a quantum computer based system, while gray background represents a classical computer system.
    The Data: synthetic, two-dimensional data, normalized and centered. Embedding: encodes the data into quantum states. Parametrized Quantum Circuit: Performs rotations and controlled rotations on qubits according to the parametervecor theta." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.qu.antum.ml/docs/Table-of-contents/3.-Architecture/" />
@@ -16,7 +16,7 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.1205ebacf147e31d6bd6f74be1ef8d96f4bb2c4943c68e5a39b4e988a774a2b0.css" integrity="sha256-EgXrrPFH4x1r1vdL4e&#43;NlvS7LElDxo5aObTpiKd0orA=">
-<script defer src="/en.search.min.2b85a02a98e9b6ee927e24fa227f937aa17b0c25b83e5d968d71331ce61c0c5b.js" integrity="sha256-K4WgKpjptu6SfiT6In&#43;TeqF7DCW4Pl2WjXEzHOYcDFs="></script>
+<script defer src="/en.search.min.99134a1790535f00be1c740af76535e2a46ca58b8bfb07e2b6e49ecb9910ef68.js" integrity="sha256-mRNKF5BTXwC&#43;HHQK92U14qRspYuL&#43;wfituSey5kQ72g="></script>
 
 <script defer src="/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js" integrity="sha256-dKi7B/C&#43;6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script>
 <!--
@@ -262,7 +262,12 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#architecture">Architecture</a></li>
+    <li><a href="#architecture">Architecture</a>
+      <ul>
+        <li><a href="#quantum-circuit">Quantum Circuit</a></li>
+        <li><a href="#neural-network">Neural Network</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -278,6 +283,10 @@ https://github.com/alex-shpak/hugo-book
   Architecture
   <a class="anchor" href="#architecture">#</a>
 </h1>
+<h2 id="quantum-circuit">
+  Quantum Circuit
+  <a class="anchor" href="#quantum-circuit">#</a>
+</h2>
 <p>I shall quickly describe the individual components which will be explained in greater detail on the following pages.
 Here the hybrid aspect becomes obvious: <span style="color:#59b2e5">Blue background represents a quantum computer based system, </span><span style="color:#666666">while gray background represents a classical computer system</span>.</p>
 <center>
@@ -290,7 +299,23 @@ Here the hybrid aspect becomes obvious: <span style="color:#59b2e5">Blue backgro
 <li><span style="color:#2913a5">Measurement:</span> measures the quantum states in classical bits.</li>
 <li><span style="color:#000000">Mapping:</span> maps the probability distribution obtained my measuring to binary labels.</li>
 <li><span style="color:#fc8f1b">Lossfunction:</span> computes the difference between output and ground-truth according to some distance measure.</li>
-<li><span style="color:#f8fc1b">Optimizer:</span> minimizes the lossfunction by changing the parametervector theta.</li>
+<li><span style="color:#f8fc1b">Optimizer:</span> minimizes the lossfunction by changing the parameter vector theta.</li>
+</ul>
+<h2 id="neural-network">
+  Neural Network
+  <a class="anchor" href="#neural-network">#</a>
+</h2>
+<p>For completenes&rsquo; sake and for comparison, here is also the architecture of the two layer Neural Network:
+Again, <span style="color:#666666">the gray background represents a classical computer system</span>.
+While there is no 1:1 correspondence between most components, similar colors were chosen.</p>
+<center>
+<img src="/archNN.png" width="800" height="420"/>
+</center>
+<ul>
+<li>The Data: synthetic, two-dimensional data, normalized and centered. (Same as above)</li>
+<li><span style="color:#59d655">Neural Network:</span> Has two input and one output feature. Consists of two <strong>f</strong>ully <strong>c</strong>onnected layers, which apply <strong>w</strong>eights and <strong>b</strong>iases according to some input vector. The non-linear activation function is a RELU function.</li>
+<li><span style="color:#fc8f1b">Lossfunction:</span> computes the difference between output and ground-truth according to some distance measure. (Same as above)</li>
+<li><span style="color:#f8fc1b">Optimizer:</span> minimizes the lossfunction by changing <strong>w</strong>eights and <strong>b</strong>iases.</li>
 </ul>
 </article>
  
@@ -322,7 +347,12 @@ Here the hybrid aspect becomes obvious: <span style="color:#59b2e5">Blue backgro
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#architecture">Architecture</a></li>
+    <li><a href="#architecture">Architecture</a>
+      <ul>
+        <li><a href="#quantum-circuit">Quantum Circuit</a></li>
+        <li><a href="#neural-network">Neural Network</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
