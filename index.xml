@@ -27,10 +27,8 @@
       
       <guid>https://www.qu.antum.ml/docs/Table-of-contents/1.-Introduction/</guid>
       <description>Environment setup #  There is actually a suprisingly large amount of different libraries for quantum state simulation. I will use pennylane by XANADU.
-Qiskit
-Tensorflow Quantum
-Cirq
-Virtual env #  Getting started #  https://pennylane.ai/qml/demos/tutorial_variational_classifier.html</description>
+    Pennylane has a clear focus on optimization and machine learning, but also hat tutorilas on quantum chemistry. Pennylane interfaces with pytorch, tensorflow and even Qiskit. One can import qiskit circuits or use tensorflow/pytorch optimizers. Pretty neat.
+That being said, theoretically one could also use some oth the other libraries, here is a short, no-exaustive list:</description>
     </item>
     
     <item>
@@ -71,7 +69,7 @@ Amplitude encoding #  Amplitude encoding only works if the input features x are 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.qu.antum.ml/docs/Table-of-contents/5.-Parametrized-Quantum-Circuit/</guid>
-      <description>TODO #  The basic idea of quantum computing is similar to that of kernel methods in machine learning, to efficiently perform computations in an intractably large Hilbert/Kernel space.
+      <description>Parametrized Quantum Circuit #  The basic idea of quantum computing is similar to that of kernel methods in machine learning, to efficiently perform computations in an intractably large Hilbert/Kernel space.
 Parameterized Quantum Circuits (PQCs, also sometimes referred to as &amp;ldquo;ansatz&amp;rdquo; or &amp;quot; variational quantum circuit&amp;rdquo;) are a combination of multiple quantum gates operating on one or multiple qubits. The quantum gates have free parameters which can be optimzied to fit a desired probability distribution.</description>
     </item>
     
@@ -115,10 +113,8 @@ Square loss
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.qu.antum.ml/docs/Table-of-contents/9.-Optimization/</guid>
-      <description>Optimization #  SPSA
-  \( \frac{\partial L}{\partial \theta_{j}} \approx \frac{L\left(\boldsymbol{\theta}&amp;#43;\Delta \boldsymbol{e}_{j}\right)-L\left(\boldsymbol{\theta}-\Delta \boldsymbol{e}_{j}\right)}{2 \Delta} \)   Gradient descent
- \( \frac{\partial L}{\partial \theta_{j}} \approx \frac{L(\boldsymbol{\theta}&amp;#43;c \boldsymbol{\Delta})-L(\boldsymbol{\theta}-c \boldsymbol{\Delta})}{2 c \Delta_{j}} \)   ADAM
- \( \boldsymbol{\theta} \leftarrow \boldsymbol{\theta}-\eta \nabla_{\boldsymbol{\theta}} L \)   num_qubits = 4 num_layers = 2 qc= c19(num_layers) num_params = qc.get_numparams() best_val = (0.01 * np.random.randn(num_layers, num_params), 0.01)#[] best_acc = 0.0 from pennylane.optimize import AdamOptimizer learning_rate = [4,2,1,0.</description>
+      <description>Weights are initialized to small random values
+Optimization #  As stated before, the goal of the optimizer is to minimize the loss function. It does this by changing the parameters of the Quantum circuit or neural network. However, a key difference is that it is impossible to access the quantum state at intermediate points during computation. Any attempt to observe the full state of the system would disrupt its quantum character.</description>
     </item>
     
     <item>

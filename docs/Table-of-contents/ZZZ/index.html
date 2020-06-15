@@ -16,7 +16,7 @@ Quantum circuit results comparison #  The following images show the decision bou
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.1205ebacf147e31d6bd6f74be1ef8d96f4bb2c4943c68e5a39b4e988a774a2b0.css" integrity="sha256-EgXrrPFH4x1r1vdL4e&#43;NlvS7LElDxo5aObTpiKd0orA=">
-<script defer src="/en.search.min.99134a1790535f00be1c740af76535e2a46ca58b8bfb07e2b6e49ecb9910ef68.js" integrity="sha256-mRNKF5BTXwC&#43;HHQK92U14qRspYuL&#43;wfituSey5kQ72g="></script>
+<script defer src="/en.search.min.4439ea178c1b4cc0e60b3b7045d3b5f544291fd14ebe78bd0a0159ccb72d9e34.js" integrity="sha256-RDnqF4wbTMDmCztwRdO19UQpH9FOvni9CgFZzLctnjQ="></script>
 
 <script defer src="/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js" integrity="sha256-dKi7B/C&#43;6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script>
 <!--
@@ -266,7 +266,7 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#quantum-circuit-results-comparison">Quantum circuit results comparison</a></li>
     <li><a href="#neural-network-results-comparison">Neural Network results comparison</a></li>
     <li><a href="#quantum-circuit-vs-neural-network">Quantum circuit vs Neural Network</a></li>
-    <li><a href="#accuracy-scores">Accuracy scores</a></li>
+    <li><a href="#accuracy-scores-todo">Accuracy scores TODO</a></li>
     <li><a href="#conclusion">Conclusion</a></li>
     <li><a href="#outlook">Outlook</a></li>
   </ul>
@@ -300,6 +300,7 @@ I tweaked the batch size and the learning rate, thereby increasing the optimizat
 </center>
 <p>Batch size: 256</p>
 <p>learning rate shedule: [4,2,1,0.5,0.25,0.1]</p>
+<p># of epochs per learning rate: 60</p>
 
   </div>
   
@@ -310,6 +311,7 @@ I tweaked the batch size and the learning rate, thereby increasing the optimizat
 </center>
 <p>Batch size: ???</p>
 <p>Learning rate schedule: [4,3,2,1.5,1,0.5]</p>
+<p># of epochs per learning rate: 30</p>
 
   </div>
   
@@ -326,7 +328,7 @@ I tweaked the batch size and the learning rate, thereby increasing the optimizat
 </h1>
 <p>The following images show the decision boundaries for the neural network with two layers.
 In the paper no information about the actual optimization procedure, besides the use of ADAM are given. So despite having to reverse engineer most of the parameters, I think the results are reasonably close.
-Here you can see the comparison of the two layer network described in TODO</p>
+Here you can see the comparison of the two layer network described in TODO source</p>
 <div class="book-columns flex flex-wrap">
   
   <div class="flex-even markdown-inner">
@@ -371,9 +373,9 @@ Here you can see the comparison of the two layer network described in TODO</p>
   
 </div>
 
-<h1 id="accuracy-scores">
-  Accuracy scores
-  <a class="anchor" href="#accuracy-scores">#</a>
+<h1 id="accuracy-scores-todo">
+  Accuracy scores TODO
+  <a class="anchor" href="#accuracy-scores-todo">#</a>
 </h1>
 <center>
 <style type="text/css">
@@ -410,88 +412,88 @@ Here you can see the comparison of the two layer network described in TODO</p>
     <td class="tg-tf2e">Average</td>
   </tr>
   <tr>
-    <td class="tg-0lax"></td>
-    <td class="tg-tf2e"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-tf2e"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-tf2e"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-tf2e"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-tf2e"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-tf2e"></td>
+    <td class="tg-0lax">Classical</td>
+    <td class="tg-tf2e">NN - 1l</td>
+    <td class="tg-0lax">96%</td>
+    <td class="tg-tf2e">100%</td>
+    <td class="tg-0lax">100%</td>
+    <td class="tg-tf2e">92%</td>
+    <td class="tg-0lax">94%</td>
+    <td class="tg-tf2e">82%</td>
+    <td class="tg-0lax">100%</td>
+    <td class="tg-tf2e">98%</td>
+    <td class="tg-0lax">70%</td>
+    <td class="tg-tf2e">92%</td>
   </tr>
   <tr>
-    <td class="tg-0lax"></td>
-    <td class="tg-tf2e"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-tf2e"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-tf2e"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-tf2e"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-tf2e"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-tf2e"></td>
+    <td class="tg-0lax">Classical</td>
+    <td class="tg-tf2e">NN - 2l</td>
+    <td class="tg-0lax">96%</td>
+    <td class="tg-tf2e">100%</td>
+    <td class="tg-0lax">100%</td>
+    <td class="tg-tf2e">100%</td>
+    <td class="tg-0lax">99%</td>
+    <td class="tg-tf2e">98%</td>
+    <td class="tg-0lax">100%</td>
+    <td class="tg-tf2e">99%</td>
+    <td class="tg-0lax">97%</td>
+    <td class="tg-tf2e">99%</td>
   </tr>
   <tr>
-    <td class="tg-0lax"></td>
-    <td class="tg-tf2e"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-tf2e"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-tf2e"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-tf2e"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-tf2e"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-tf2e"></td>
+    <td class="tg-glna">Classical (mine)</td>
+    <td class="tg-f0m5">NN - 2l</td>
+    <td class="tg-glna">%</td>
+    <td class="tg-f0m5">%</td>
+    <td class="tg-glna">%</td>
+    <td class="tg-f0m5">%</td>
+    <td class="tg-glna">%</td>
+    <td class="tg-f0m5">%</td>
+    <td class="tg-glna">%</td>
+    <td class="tg-f0m5">%</td>
+    <td class="tg-glna">%</td>
+    <td class="tg-f0m5">%</td>
   </tr>
   <tr>
-    <td class="tg-0lax"></td>
-    <td class="tg-tf2e"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-tf2e"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-tf2e"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-tf2e"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-tf2e"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-tf2e"></td>
+    <td class="tg-0lax">Hybrid</td>
+    <td class="tg-tf2e">c1 - 1l</td>
+    <td class="tg-0lax">%</td>
+    <td class="tg-tf2e">%</td>
+    <td class="tg-0lax">%</td>
+    <td class="tg-tf2e">%</td>
+    <td class="tg-0lax">%</td>
+    <td class="tg-tf2e">%</td>
+    <td class="tg-0lax">%</td>
+    <td class="tg-tf2e">%</td>
+    <td class="tg-0lax">%</td>
+    <td class="tg-tf2e">%</td>
   </tr>
   <tr>
-    <td class="tg-0lax"></td>
-    <td class="tg-tf2e"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-tf2e"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-tf2e"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-tf2e"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-tf2e"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-tf2e"></td>
+    <td class="tg-0lax">Hybrid</td>
+    <td class="tg-tf2e">c1 - 2l</td>
+    <td class="tg-0lax">%</td>
+    <td class="tg-tf2e">%</td>
+    <td class="tg-0lax">%</td>
+    <td class="tg-tf2e">%</td>
+    <td class="tg-0lax">%</td>
+    <td class="tg-tf2e">%</td>
+    <td class="tg-0lax">%</td>
+    <td class="tg-tf2e">%</td>
+    <td class="tg-0lax">%</td>
+    <td class="tg-tf2e">%</td>
   </tr>
   <tr>
-    <td class="tg-0lax"></td>
-    <td class="tg-tf2e"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-tf2e"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-tf2e"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-tf2e"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-tf2e"></td>
-    <td class="tg-0lax"></td>
-    <td class="tg-tf2e"></td>
+    <td class="tg-0lax">Hybrid</td>
+    <td class="tg-tf2e">c19 - 1l</td>
+    <td class="tg-0lax">91%</td>
+    <td class="tg-tf2e">97%</td>
+    <td class="tg-0lax">81%</td>
+    <td class="tg-tf2e">48%</td>
+    <td class="tg-0lax">92%</td>
+    <td class="tg-tf2e">75%</td>
+    <td class="tg-0lax">82%</td>
+    <td class="tg-tf2e">76%</td>
+    <td class="tg-0lax">70%</td>
+    <td class="tg-tf2e">79%</td>
   </tr>
   <tr>
     <td class="tg-0lax">Hybrid</td>
@@ -516,10 +518,10 @@ Here you can see the comparison of the two layer network described in TODO</p>
     <td class="tg-f0m5">100%</td>
     <td class="tg-glna">99%</td>
     <td class="tg-f0m5">98%</td>
-    <td class="tg-glna"></td>
-    <td class="tg-f0m5">97</td>
-    <td class="tg-glna"></td>
-    <td class="tg-f0m5"></td>
+    <td class="tg-glna">96%</td>
+    <td class="tg-f0m5">97%</td>
+    <td class="tg-glna">80%</td>
+    <td class="tg-f0m5">95%</td>
   </tr>
 </tbody>
 </table>
@@ -582,7 +584,7 @@ Here you can see the comparison of the two layer network described in TODO</p>
     <li><a href="#quantum-circuit-results-comparison">Quantum circuit results comparison</a></li>
     <li><a href="#neural-network-results-comparison">Neural Network results comparison</a></li>
     <li><a href="#quantum-circuit-vs-neural-network">Quantum circuit vs Neural Network</a></li>
-    <li><a href="#accuracy-scores">Accuracy scores</a></li>
+    <li><a href="#accuracy-scores-todo">Accuracy scores TODO</a></li>
     <li><a href="#conclusion">Conclusion</a></li>
     <li><a href="#outlook">Outlook</a></li>
   </ul>

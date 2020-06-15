@@ -5,16 +5,12 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Environment setup #  There is actually a suprisingly large amount of different libraries for quantum state simulation. I will use pennylane by XANADU.
-Qiskit
-Tensorflow Quantum
-Cirq
-Virtual env #  Getting started #  https://pennylane.ai/qml/demos/tutorial_variational_classifier.html">
+    Pennylane has a clear focus on optimization and machine learning, but also hat tutorilas on quantum chemistry. Pennylane interfaces with pytorch, tensorflow and even Qiskit. One can import qiskit circuits or use tensorflow/pytorch optimizers. Pretty neat.
+That being said, theoretically one could also use some oth the other libraries, here is a short, no-exaustive list:">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
 <meta property="og:description" content="Environment setup #  There is actually a suprisingly large amount of different libraries for quantum state simulation. I will use pennylane by XANADU.
-Qiskit
-Tensorflow Quantum
-Cirq
-Virtual env #  Getting started #  https://pennylane.ai/qml/demos/tutorial_variational_classifier.html" />
+    Pennylane has a clear focus on optimization and machine learning, but also hat tutorilas on quantum chemistry. Pennylane interfaces with pytorch, tensorflow and even Qiskit. One can import qiskit circuits or use tensorflow/pytorch optimizers. Pretty neat.
+That being said, theoretically one could also use some oth the other libraries, here is a short, no-exaustive list:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.qu.antum.ml/docs/Table-of-contents/1.-Introduction/" />
 
@@ -22,7 +18,7 @@ Virtual env #  Getting started #  https://pennylane.ai/qml/demos/tutorial_variat
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.1205ebacf147e31d6bd6f74be1ef8d96f4bb2c4943c68e5a39b4e988a774a2b0.css" integrity="sha256-EgXrrPFH4x1r1vdL4e&#43;NlvS7LElDxo5aObTpiKd0orA=">
-<script defer src="/en.search.min.99134a1790535f00be1c740af76535e2a46ca58b8bfb07e2b6e49ecb9910ef68.js" integrity="sha256-mRNKF5BTXwC&#43;HHQK92U14qRspYuL&#43;wfituSey5kQ72g="></script>
+<script defer src="/en.search.min.4439ea178c1b4cc0e60b3b7045d3b5f544291fd14ebe78bd0a0159ccb72d9e34.js" integrity="sha256-RDnqF4wbTMDmCztwRdO19UQpH9FOvni9CgFZzLctnjQ="></script>
 
 <script defer src="/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js" integrity="sha256-dKi7B/C&#43;6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script>
 <!--
@@ -288,18 +284,39 @@ https://github.com/alex-shpak/hugo-book
 </h1>
 <p>There is actually a suprisingly large amount of different libraries for quantum state simulation.
 I will use pennylane by XANADU.</p>
-<p>Qiskit</p>
-<p>Tensorflow Quantum</p>
-<p>Cirq</p>
+<center>
+<img src="https://pennylane.ai/img/pennylane_thin.png" />
+</center>
+<center>
+<img src="https://pennylane.ai/img/logo_new_small.png" width="360" height="100"/>
+</center>
+<p>Pennylane has a clear focus on optimization and machine learning, but also hat tutorilas on quantum chemistry. Pennylane interfaces with pytorch, tensorflow and even Qiskit. One can import qiskit circuits or use tensorflow/pytorch optimizers. Pretty neat.</p>
+<p>That being said, theoretically one could also use some oth the other libraries, here is a short, no-exaustive list:</p>
+<ul>
+<li>
+  <a href="https://qiskit.org/">Qiskit</a></li>
+<li>
+  <a href="https://github.com/tensorflow/quantum">Tensorflow Quantum</a></li>
+<li>
+  <a href="https://github.com/quantumlib/cirq">Cirq</a></li>
+<li>
+  <a href="https://github.com/Qaintum">Qaintum</a></li>
+</ul>
 <h1 id="virtual-env">
   Virtual env
   <a class="anchor" href="#virtual-env">#</a>
 </h1>
-<h1 id="getting-started">
+<p>It is recommended to set up a virtual environment, e.g. using Anaconda. To create a virtual environement and install the neccessary packages:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">conda create --name quantum
+source activate quantum
+pip install qiskit scipy jupyter numpy matplotlib pennylane
+</code></pre></div><h1 id="getting-started">
   Getting started
   <a class="anchor" href="#getting-started">#</a>
 </h1>
-<p><a href="https://pennylane.ai/qml/demos/tutorial_variational_classifier.html">https://pennylane.ai/qml/demos/tutorial_variational_classifier.html</a></p>
+<p>Fire up a Jupyter Notebook and you are good to go!
+For starters, have a look at the 
+  <a href="https://pennylane.ai/qml/demos/tutorial_variational_classifier.html">pennylane tutorials scetion</a>!</p>
 </article>
  
       
