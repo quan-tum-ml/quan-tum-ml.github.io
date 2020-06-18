@@ -16,7 +16,7 @@ Optimization #  As stated before, the goal of the optimizer is to minimize the l
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.1205ebacf147e31d6bd6f74be1ef8d96f4bb2c4943c68e5a39b4e988a774a2b0.css" integrity="sha256-EgXrrPFH4x1r1vdL4e&#43;NlvS7LElDxo5aObTpiKd0orA=">
-<script defer src="/en.search.min.4439ea178c1b4cc0e60b3b7045d3b5f544291fd14ebe78bd0a0159ccb72d9e34.js" integrity="sha256-RDnqF4wbTMDmCztwRdO19UQpH9FOvni9CgFZzLctnjQ="></script>
+<script defer src="/en.search.min.c787607b41ff4f30a70d090d22f3ccaae4f3d95971a684fe43eee4015343aaee.js" integrity="sha256-x4dge0H/TzCnDQkNIvPMquTz2VlxpoT&#43;Q&#43;7kAVNDqu4="></script>
 
 <script defer src="/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js" integrity="sha256-dKi7B/C&#43;6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script>
 <!--
@@ -277,6 +277,7 @@ https://github.com/alex-shpak/hugo-book
     </li>
     <li><a href="#talk-is-cheap-show-me-the-code---linus-torvalds">Talk is cheap, show me the code - Linus Torvalds</a></li>
     <li><a href="#training-time">Training time</a></li>
+    <li><a href="#sources">Sources</a></li>
   </ul>
 </nav>
 
@@ -295,7 +296,16 @@ https://github.com/alex-shpak/hugo-book
 </h1>
 <p>As stated before, the goal of the optimizer is to minimize the loss function. It does this by changing the parameters of the Quantum circuit or neural network.
 However, a key  difference  is  that  it  is  impossible  to access the quantum state at intermediate points during computation. Any attempt to observe the full state of the system would disrupt its quantum character. Moreover, it is difficult to conceive a circuit learning algorithm that truly resembles backpropagation, as it would rely on storing  the  intermediate  state  of  the  network  during  computation.  Backpropagation is the gold standard algorithm for neural networks and can be described as a computationally  efficient  organization  of  the  chain  rule that allows gradient descent to work on large-scale models.</p>
-<p>While backprop-like algorithms have been proposed ( Backwards Quantum Propagation of Phase errors (Baqprop) TODO: Source <a href="https://arxiv.org/abs/1806.09729">https://arxiv.org/abs/1806.09729</a> A Universal Training Algorithm for Quantum Deep Learning), here we will make use of a simpler approach.</p>
+<p>While backprop-like algorithms have been proposed ( Backwards Quantum Propagation of Phase errors (Baqprop)<sup>
+  <a href="/#fn11">6</a></sup>), here we will make use of a simpler approach.</p>
+<p>In the following video, you can see the optimization process, both for a parameterized quantum circuit (left) and a classical neural network (right).</p>
+<center>
+<video width="420" height="280" controls>
+  <source src="/movie.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video> 
+</center>
+Notice that for the PQC the optimization landscape is much more complex. Notice also that the changes between frames decreases towards the end, as the learning rate decreases as well.
 <h2 id="parameter-shift-rule">
   Parameter-shift rule
   <a class="anchor" href="#parameter-shift-rule">#</a>
@@ -312,8 +322,8 @@ By evaluating or circuit &ldquo;a little to the left&rdquo; and &ldquo;a little 
 
 </blockquote>
 
-where ∆ is a (small) hyperparameter and ej is the Carte-sian unit vector in the j direction.
-Note that while this works, it is extremely inefficient: computes  anapproximate  gradient  vector with two  evaluations of the loss function <strong>PER PARAMETER</strong> times the specified numer of finite iterations (&ldquo;shots&rdquo;):</p>
+where ∆ is a (small) hyperparameter and ej is the Cartesian unit vector in the j direction.
+Note that while this works, it is extremely inefficient: computes  an approximate  gradient  vector with two  evaluations of the loss function <strong>PER PARAMETER</strong> times the specified number of finite iterations (&ldquo;shots&rdquo;):</p>
 <span>
   \( 2 * \#Params * \#Shots \)
 </span>
@@ -342,14 +352,15 @@ Note that while this works, it is extremely inefficient: computes  anapproximate
   is  a  random  perturbation  vector  and <span>
   \(c\)
 </span>
-  is  a (small) hyperparameter. So essentially we do not evaluate the gradient for each dimension indepently, but joined.</p>
-<p>There are cases when finite difference methods are ill-conditioned and unstable due to truncation and round-off  errors. This  is  one  of  the  reasons  why  machinelearning relies on the analytical gradient when possible, and it is often calculated with automatic differentiation scheme. Compared to finite difference and SPSA, the analytical gradient has the advantage of providing an unbiased estimator. TODO: Source</p>
+  is  a (small) hyperparameter. So essentially we do not evaluate the gradient for each dimension independently, but joined.</p>
+<p>There are cases when finite difference methods are ill-conditioned and unstable due to truncation and round-off  errors. This  is  one  of  the  reasons  why  machine learning relies on the analytical gradient when possible, and it is often calculated with automatic differentiation scheme. Compared to finite difference and SPSA, the analytical gradient has the advantage of providing an unbiased estimator.<sup>
+  <a href="/#fn12">2</a></sup></p>
 <h2 id="stochastic-gradient-descent">
   (Stochastic) Gradient descent
   <a class="anchor" href="#stochastic-gradient-descent">#</a>
 </h2>
-<p>Now, that we have obtained a gradient vector through eighter method, we need to use it to update the circuit&rsquo;s parameters.
-In the realm of classical optimization gradient descent and it&rsquo;s derived methods have proven to be efficient and powerfull at optimization tasks.</p>
+<p>Now, that we have obtained a gradient vector through either method, we need to use it to update the circuit&rsquo;s parameters.
+In the realm of classical optimization gradient descent and it&rsquo;s derived methods have proven to be efficient and powerful at optimization tasks.</p>
 <blockquote class="book-hint info">
   <p>Gradient descent update rule</p>
 <span>
@@ -367,28 +378,29 @@ In the realm of classical optimization gradient descent and it&rsquo;s derived m
  is the learning rate.
 This update rule is then applied iteratively.</p>
 <p>For stochastic gradient descent, instead of calculating the gradients over the whole training set, gradients are only calculated for an i.i.d. subsampeled &ldquo;minibatch&rdquo;.</p>
-<p>There are further practical &ldquo;tricks&rdquo; to facilitate training, which shall be outlined shotly:</p>
+<p>There are further practical &ldquo;tricks&rdquo; to facilitate training, which shall be outlined shortly:</p>
 <h3 id="minibatches">
   Minibatches
   <a class="anchor" href="#minibatches">#</a>
 </h3>
-<p>In this implementation a minibachsize of 265 was used, which seems realtively large to me, but provided the most stable results. In the paper, the the batchsize is not mentioned.</p>
+<p>In this implementation a minibach size of 265 was used, which seems relatively large to me, but provided the most stable results. In the paper, the the batch size is not mentioned.</p>
 <h3 id="learning-rate-schedule">
   Learning rate schedule
   <a class="anchor" href="#learning-rate-schedule">#</a>
 </h3>
-<p>Instead of using the same learning rate throughout, larger steps are taken in the beginning nad smaller steps in the end. This is done via learning rate schedule, decreasing the learning rate every X number of epochs.</p>
+<p>Instead of using the same learning rate throughout, larger steps are taken in the beginning and smaller steps in the end. This is done via learning rate schedule, decreasing the learning rate every X number of epochs.</p>
 <h3 id="adam">
   ADAM
   <a class="anchor" href="#adam">#</a>
 </h3>
-<p>There are further improvements to stochastic gradient descent namely ADAM, which uses first and second order momentum to overcome plateaus. If you are not familiar, head over to Wikipedia TODO.</p>
+<p>There are further improvements to stochastic gradient descent namely ADAM, which uses first and second order momentum to overcome plateaus. If you are not familiar, head over to 
+  <a href="https://en.wikipedia.org/wiki/Stochastic_gradient_descent#Adam">Wikipedia</a>.</p>
 <h1 id="talk-is-cheap-show-me-the-code---linus-torvalds">
   Talk is cheap, show me the code - Linus Torvalds
   <a class="anchor" href="#talk-is-cheap-show-me-the-code---linus-torvalds">#</a>
 </h1>
 <p>Luckily <code>pennylane</code> already comes with interfaces for lots of 
-  <a href="https://pennylane.readthedocs.io/en/stable/introduction/optimizers.html">different opimizers</a>, such as NumPy, Pytorch and tensorflow.
+  <a href="https://pennylane.readthedocs.io/en/stable/introduction/optimizers.html">different opimizers</a>, such as NumPy, Pytorch and Tensorflow.
 As stated above, the ADAM optimizer from NumPy will be used.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> pennylane.optimize <span style="color:#f92672">import</span> AdamOptimizer
 
@@ -425,7 +437,8 @@ opt <span style="color:#f92672">=</span> AdamOptimizer(learning_rate, beta1<span
 <p>None: a non-differentiable QNode is returned.</p>
 </li>
 </ul>
-<p>I have used the &ldquo;best method throughout, while the paper TODO uses SPSA.</p>
+<p>I have used the &ldquo;best method throughout, while the paper<sup>
+  <a href="/#fn13">1</a></sup> uses SPSA.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">losslist <span style="color:#f92672">=</span> []
 
 batch_size <span style="color:#f92672">=</span> <span style="color:#ae81ff">256</span>
@@ -469,7 +482,17 @@ var <span style="color:#f92672">=</span> best_val<span style="color:#75715e">#va
   Training time
   <a class="anchor" href="#training-time">#</a>
 </h1>
-<p>Training a single datset on circuit19 took about 5 hours. For the 9 sets thats almost two whole days! Training the classical Neural network on a single dataset takes about 5 minutes&hellip;</p>
+<p>Training a single data set on circuit19 took about 5 hours. For the 9 sets that&rsquo;s almost two whole days! Training the classical Neural network on a single data set to a similar accuracy takes about 5 minutes&hellip;</p>
+<h1 id="sources">
+  Sources
+  <a class="anchor" href="#sources">#</a>
+</h1>
+<p><a name="fn13">1</a>: 
+  <a href="https://arxiv.org/abs/2003.09887">Evaluation of Parameterized Quantum Circuits: on the design, and the relation between classification accuracy, expressibility and entangling capability, arXiv:2003.09887</a> <br/>
+<a name="fn12">2</a>: 
+  <a href="https://arxiv.org/abs/1906.07682">Parameterized quantum circuits as machine learning models, arXiv:1906.07682</a> <br/>
+<a name="fn11">6</a>: 
+  <a href="https://arxiv.org/abs/1806.09729">A Universal Training Algorithm for Quantum Deep Learning, arXiv:1806.09729</a> <br/></p>
 </article>
  
       
@@ -515,6 +538,7 @@ var <span style="color:#f92672">=</span> best_val<span style="color:#75715e">#va
     </li>
     <li><a href="#talk-is-cheap-show-me-the-code---linus-torvalds">Talk is cheap, show me the code - Linus Torvalds</a></li>
     <li><a href="#training-time">Training time</a></li>
+    <li><a href="#sources">Sources</a></li>
   </ul>
 </nav>
 

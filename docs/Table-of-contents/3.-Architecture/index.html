@@ -5,10 +5,10 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Architecture #  Quantum Circuit #  I shall quickly describe the individual components which will be explained in greater detail on the following pages. Here the hybrid aspect becomes obvious: Blue background represents a quantum computer based system, while gray background represents a classical computer system.
-   The Data: synthetic, two-dimensional data, normalized and centered. Embedding: encodes the data into quantum states. Parametrized Quantum Circuit: Performs rotations and controlled rotations on qubits according to the parametervecor theta.">
+   The Data: synthetic, two-dimensional data, normalized and centered. Embedding: encodes the data into quantum states. Parameterized Quantum Circuit: Performs rotations and controlled rotations on qubits according to the parameter vector theta.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="" />
 <meta property="og:description" content="Architecture #  Quantum Circuit #  I shall quickly describe the individual components which will be explained in greater detail on the following pages. Here the hybrid aspect becomes obvious: Blue background represents a quantum computer based system, while gray background represents a classical computer system.
-   The Data: synthetic, two-dimensional data, normalized and centered. Embedding: encodes the data into quantum states. Parametrized Quantum Circuit: Performs rotations and controlled rotations on qubits according to the parametervecor theta." />
+   The Data: synthetic, two-dimensional data, normalized and centered. Embedding: encodes the data into quantum states. Parameterized Quantum Circuit: Performs rotations and controlled rotations on qubits according to the parameter vector theta." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.qu.antum.ml/docs/Table-of-contents/3.-Architecture/" />
 
@@ -16,7 +16,7 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.1205ebacf147e31d6bd6f74be1ef8d96f4bb2c4943c68e5a39b4e988a774a2b0.css" integrity="sha256-EgXrrPFH4x1r1vdL4e&#43;NlvS7LElDxo5aObTpiKd0orA=">
-<script defer src="/en.search.min.4439ea178c1b4cc0e60b3b7045d3b5f544291fd14ebe78bd0a0159ccb72d9e34.js" integrity="sha256-RDnqF4wbTMDmCztwRdO19UQpH9FOvni9CgFZzLctnjQ="></script>
+<script defer src="/en.search.min.c787607b41ff4f30a70d090d22f3ccaae4f3d95971a684fe43eee4015343aaee.js" integrity="sha256-x4dge0H/TzCnDQkNIvPMquTz2VlxpoT&#43;Q&#43;7kAVNDqu4="></script>
 
 <script defer src="/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js" integrity="sha256-dKi7B/C&#43;6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script>
 <!--
@@ -295,11 +295,11 @@ Here the hybrid aspect becomes obvious: <span style="color:#59b2e5">Blue backgro
 <ul>
 <li>The Data: synthetic, two-dimensional data, normalized and centered.</li>
 <li><span style="color:#fc3535">Embedding:</span> encodes the data into quantum states.</li>
-<li><span style="color:#59d655">Parametrized Quantum Circuit:</span> Performs rotations and controlled rotations on qubits according to the parametervecor theta.</li>
+<li><span style="color:#59d655">Parameterized Quantum Circuit:</span> Performs rotations and controlled rotations on qubits according to the parameter vector theta.</li>
 <li><span style="color:#2913a5">Measurement:</span> measures the quantum states in classical bits.</li>
 <li><span style="color:#000000">Mapping:</span> maps the probability distribution obtained my measuring to binary labels.</li>
-<li><span style="color:#fc8f1b">Lossfunction:</span> computes the difference between output and ground-truth according to some distance measure.</li>
-<li><span style="color:#f8fc1b">Optimizer:</span> minimizes the lossfunction by changing the parameter vector theta.</li>
+<li><span style="color:#fc8f1b">Loss function:</span> computes the difference between output and ground-truth according to some distance measure.</li>
+<li><span style="color:#f8fc1b">Optimizer:</span> minimizes the loss function by changing the parameter vector theta.</li>
 </ul>
 <h2 id="neural-network">
   Neural Network
@@ -314,8 +314,8 @@ While there is no 1:1 correspondence between most components, similar colors wer
 <ul>
 <li>The Data: synthetic, two-dimensional data, normalized and centered. (Same as above)</li>
 <li><span style="color:#59d655">Neural Network:</span> Has two input and one output feature. Consists of two <strong>f</strong>ully <strong>c</strong>onnected layers, which apply <strong>w</strong>eights and <strong>b</strong>iases according to some input vector. The non-linear activation function is a RELU function.</li>
-<li><span style="color:#fc8f1b">Lossfunction:</span> computes the difference between output and ground-truth according to some distance measure. (Same as above)</li>
-<li><span style="color:#f8fc1b">Optimizer:</span> minimizes the lossfunction by changing <strong>w</strong>eights and <strong>b</strong>iases.</li>
+<li><span style="color:#fc8f1b">Loss function:</span> computes the difference between output and ground-truth according to some distance measure. (Same as above)</li>
+<li><span style="color:#f8fc1b">Optimizer:</span> minimizes the loss function by changing <strong>w</strong>eights and <strong>b</strong>iases.</li>
 </ul>
 </article>
  

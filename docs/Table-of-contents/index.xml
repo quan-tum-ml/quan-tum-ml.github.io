@@ -17,7 +17,7 @@
       <guid>https://www.qu.antum.ml/docs/Table-of-contents/0.-Preface/</guid>
       <description>What are Hybrid networks, anyway? #  While looking through the web, it seemed there is no clear-cut definition of &amp;ldquo;Hybrid&amp;rdquo;.
   This Qiskit tutorial uses a classical Neural network to learn the optimal rotations for a simple quantum circuit.
-  This Tensorflow Quantum tutorial uses something akin to a regular max-pooling layer to first downproject the 28x28 images to 4x4 images, which are then fed into a qubit grid of same size.</description>
+  This Tensorflow Quantum tutorial uses something akin to a regular max-pooling layer to first down project the 28x28 images to 4x4 images, which are then fed into a qubit grid of same size.</description>
     </item>
     
     <item>
@@ -26,8 +26,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.qu.antum.ml/docs/Table-of-contents/1.-Introduction/</guid>
-      <description>Environment setup #  There is actually a suprisingly large amount of different libraries for quantum state simulation. I will use pennylane by XANADU.
-    Pennylane has a clear focus on optimization and machine learning, but also hat tutorilas on quantum chemistry. Pennylane interfaces with pytorch, tensorflow and even Qiskit. One can import qiskit circuits or use tensorflow/pytorch optimizers. Pretty neat.
+      <description>Environment setup #  There is actually a surprisingly large amount of different libraries for quantum state simulation. I will use pennylane by XANADU.
+    Pennylane has a clear focus on optimization and machine learning, but also hat tutorials on quantum chemistry. Pennylane interfaces with Pytorch, Tensorflow and even Qiskit. One can import qiskit circuits or use Tensorflow/Pytorch optimizers. Pretty neat.
 That being said, theoretically one could also use some oth the other libraries, here is a short, no-exaustive list:</description>
     </item>
     
@@ -37,9 +37,9 @@ That being said, theoretically one could also use some oth the other libraries, 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.qu.antum.ml/docs/Table-of-contents/2.-The-Data/</guid>
-      <description>About the Data #  This synthetic set consists of three subsets, each with three increasing difficulty levels, amounting to 9 datasets in total. Each of the nine sets consists of 1500 points (the amount is specified during the data generation). The data are split into 70% train and 30% validation.
+      <description>About the Data #  This synthetic set consists of three subsets, each with three increasing difficulty levels, amounting to 9 data sets in total. Each of the nine sets consists of 1500 points (the amount is specified during the data generation). The data are split into 70% train and 30% validation.
   Screenshot from  1
-*Note that the Datasets are nomalized to length one, but not centered around zero.</description>
+*Note that the data sets are normalized to length one, but not centered around zero.</description>
     </item>
     
     <item>
@@ -49,7 +49,7 @@ That being said, theoretically one could also use some oth the other libraries, 
       
       <guid>https://www.qu.antum.ml/docs/Table-of-contents/3.-Architecture/</guid>
       <description>Architecture #  Quantum Circuit #  I shall quickly describe the individual components which will be explained in greater detail on the following pages. Here the hybrid aspect becomes obvious: Blue background represents a quantum computer based system, while gray background represents a classical computer system.
-   The Data: synthetic, two-dimensional data, normalized and centered. Embedding: encodes the data into quantum states. Parametrized Quantum Circuit: Performs rotations and controlled rotations on qubits according to the parametervecor theta.</description>
+   The Data: synthetic, two-dimensional data, normalized and centered. Embedding: encodes the data into quantum states. Parameterized Quantum Circuit: Performs rotations and controlled rotations on qubits according to the parameter vector theta.</description>
     </item>
     
     <item>
@@ -58,9 +58,8 @@ That being said, theoretically one could also use some oth the other libraries, 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.qu.antum.ml/docs/Table-of-contents/4.-Embedding/</guid>
-      <description>How does one get the data into the Quantum circuit? #  There are a multitude of ways to do so. The two simplest ways to embed information are Amplitude and Product encoding. This embedding circuit preceeds all other quantum circuits shown later and will not be drawn explicitly.
-TODO: talk about scaling&amp;hellip;linear vs. non-linear kernel
-Amplitude encoding #  Amplitude encoding only works if the input features x are nomalized to   \(\bm{x} \in [0,1] \)  .</description>
+      <description>How does one get the data into the Quantum circuit? #  There are a multitude of ways to do so. The two simplest ways to embed information are Amplitude and Product encoding. This embedding circuit precedes all other quantum circuits shown later and will not be drawn explicitly.
+Amplitude encoding #  Amplitude encoding only works if the input features x are normalized to   \(\bm{x} \in [0,1] \)  .</description>
     </item>
     
     <item>
@@ -69,8 +68,8 @@ Amplitude encoding #  Amplitude encoding only works if the input features x are 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.qu.antum.ml/docs/Table-of-contents/5.-Parametrized-Quantum-Circuit/</guid>
-      <description>Parametrized Quantum Circuit #  The basic idea of quantum computing is similar to that of kernel methods in machine learning, to efficiently perform computations in an intractably large Hilbert/Kernel space.
-Parameterized Quantum Circuits (PQCs, also sometimes referred to as &amp;ldquo;ansatz&amp;rdquo; or &amp;quot; variational quantum circuit&amp;rdquo;) are a combination of multiple quantum gates operating on one or multiple qubits. The quantum gates have free parameters which can be optimzied to fit a desired probability distribution.</description>
+      <description>Parameterized Quantum Circuit #  The basic idea of quantum computing is similar to that of kernel methods in machine learning, to efficiently perform computations in an intractably large Hilbert/Kernel space.
+Parameterized Quantum Circuits (PQCs, also sometimes referred to as &amp;ldquo;ansatz&amp;rdquo; or &amp;quot; variational quantum circuit&amp;rdquo;) are a combination of multiple quantum gates operating on one or multiple qubits. The quantum gates have free parameters which can be optimized to fit a desired probability distribution.</description>
     </item>
     
     <item>
@@ -79,8 +78,8 @@ Parameterized Quantum Circuits (PQCs, also sometimes referred to as &amp;ldquo;a
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.qu.antum.ml/docs/Table-of-contents/6.-Measurement/</guid>
-      <description>Measurement #  The four qubits are then measured in a fixed but arbitray basis. Arbitrary since you can always rotate into a different basis, in this case this rotation is just leaned and not explicitly applied.
-The process of preparing quantum states, embedding data, applying rotations according to the parametervecor theta and measureing the outcome are performed muliple times.
+      <description>Measurement #  The four qubits are then measured in a fixed but arbitrary basis. Arbitrary since you can always rotate into a different basis, in this case this rotation is just leaned and not explicitly applied.
+The process of preparing quantum states, embedding data, applying rotations according to the parameter vector theta and measuring the outcome are performed multiple times.
 dev = qml.device(&amp;#34;default.qubit&amp;#34;, wires=4, shots=1000) This is referred to as &amp;ldquo;shots&amp;rdquo; and will lead to a probability distribution over the possible states.</description>
     </item>
     
@@ -90,8 +89,8 @@ dev = qml.device(&amp;#34;default.qubit&amp;#34;, wires=4, shots=1000) This is r
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.qu.antum.ml/docs/Table-of-contents/7.-Mapping/</guid>
-      <description>Mapping #  Now that we have the probablílity distribution we need to somehow map this to eighter one of our output labels. This is done via a boolean function;
-When measureing n qubits:   \( j \in \{0,1\}^{n} \)  , the mapping function is of the kind:
+      <description>Mapping #  Now that we have the probability distribution we need to somehow map this to either one of our output labels. This is done via a boolean function;
+When measuring n qubits:   \( j \in \{0,1\}^{n} \)  , the mapping function is of the kind:
 boolean mapping function
  \( j \rightarrow \{0,1\} \)   While this would be sufficient for a classification task, in order to display the &amp;ldquo;confidence&amp;rdquo; of the prediction, my approach was to multiply the normalized maximum probability (e.</description>
     </item>
@@ -102,7 +101,7 @@ boolean mapping function
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.qu.antum.ml/docs/Table-of-contents/8.-Loss/</guid>
-      <description>Ubi loqui #  The task of learning an arbitrary function from data is mathematically expressed as the minimization of a loss function   \(L(\bm{\theta})\)  , also known as the objective function, with respect to the parameter vector  \(\bm{\theta}\)  For the loss function, a standart quadratic loss was used:
+      <description>Loss function #  The task of learning an arbitrary function from data is mathematically expressed as the minimization of a loss function   \(L(\bm{\theta})\)  , also known as the objective function, with respect to the parameter vector  \(\bm{\theta}\)  For the loss function, a standard quadratic loss was used:
 Square loss
  \(L(\bm{\theta}) = (y - ŷ)^{2}\)   Where y is the ground truth label and ŷ is the predicted label</description>
     </item>
@@ -123,8 +122,8 @@ Optimization #  As stated before, the goal of the optimizer is to minimize the l
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://www.qu.antum.ml/docs/Table-of-contents/ZZZ/</guid>
-      <description>Results #  Be aware, that the results might not line up exactly for different reasons. After all this is a stochastic optimization process, the generation of the Data, the selection of training and validation set or the selection of the minibatches mitght contribute to finding a different minima.
-Quantum circuit results comparison #  The following images show the decision boundaries for circuit 19 with two layers. I tweaked the batch size and the learning rate, thereby increasing the optimization duration but archieving much more consistent results.</description>
+      <description>Results #  Be aware, that the results might not line up exactly for different reasons. After all this is a stochastic optimization process, the generation of the Data, the selection of training and validation set or the selection of the minibatches might contribute to finding a different minima.
+Quantum circuit results comparison #  The following images show the decision boundaries for circuit 19 with two layers. I tweaked the batch size and the learning rate, thereby increasing the optimization duration but archiving much more consistent results.</description>
     </item>
     
   </channel>
